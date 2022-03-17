@@ -839,7 +839,6 @@ footer {
 				margin-bottom: 25px;   
 			}
 		}
-
 		.btn {
 			background: var(--complementary2);   
 			font-family: 'Roboto', sans-serif;    
@@ -847,6 +846,13 @@ footer {
 			font-weight: bold;
 			font-size: 20px;
 			line-height: 23px;
+			padding: 12px 42px;
+			&:hover {
+				background-color: #fff;
+				border: solid 1px var(--complementary2);
+				color: var(--complementary2);
+				transition-duration: .5s;
+			}
 			@media screen and (max-width: 768px) { 
 				margin-top: 0 !important;
 				padding: 10px 36px;     
@@ -854,7 +860,6 @@ footer {
 				line-height: 19px;         
 			}
 		}
-
 		p {
 			color: var(--light);
 			font-size: 22px;
@@ -869,7 +874,10 @@ footer {
 				}
 			}
 			@media screen and (max-width: 768px) {
-				margin-bottom: 38px;      
+				margin-bottom: 38px;  
+				img {
+					width: 104px;
+				}    
 			}
 		}
 	}

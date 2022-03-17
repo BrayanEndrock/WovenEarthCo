@@ -325,15 +325,15 @@
         "type": "featured-row",
         "settings": {
           "theme": "dark",
-          "image": "shopify:\/\/shop_images\/the-woven-earth-difference.png",
-          "mobile_image": "shopify:\/\/shop_images\/featured-row-mobile.png",
+          "image": "shopify:\/\/shop_images\/all-products-hero-featured-image.png",
+          "mobile_image": "shopify:\/\/shop_images\/all-products-hero-featured-image-mobile.png",
           "layout": "left",
           "title": "The Woven Earth difference.",
           "text": "",
           "button_label": "Learn More",
-          "button_link": "",
-          "icon-1": "shopify:\/\/shop_images\/Third.png",
-          "icon-2": "shopify:\/\/shop_images\/Organic.png"
+          "button_link": "https:\/\/wovenearth.com\/collections\/woven-earth",
+          "icon-1": "shopify:\/\/shop_images\/Third_5974f910-6874-4b08-a1f4-cb970b86c6fd.png",
+          "icon-2": "shopify:\/\/shop_images\/Organic_9cfa3043-f716-404f-8be1-499d4b6d88f1.png"
         }
       },
       "16216059101b410950": {

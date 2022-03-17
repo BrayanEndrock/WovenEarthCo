@@ -1,4 +1,5 @@
 <div class="featured-row--wrapper featured-row-theme--{{section.settings.theme }} {% if section.settings.layout == 'background' %}feature-block-with-background" style="background-image: url({{ section.settings.image | img_url: 'master' }}){% endif %}">
+  
   {%- comment -%}
     {% if section.settings.theme == 'dark' %}
       <div class="large--hide lt-char lt-c">C</div>
@@ -23,7 +24,7 @@
                 data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
                 data-aspectratio="{{ section.settings.image.aspect_ratio }}"
                 data-sizes="auto"
-                alt="{{ section.settings.image.alt | escape }}"
+                alt="{{ section.settings.title }} Featured Image"
               >
           </div>
           {% else %}
@@ -47,8 +48,16 @@
             {% endif %}
             {% if section.settings.icon-1 != blank and section.settings.icon-2 != blank %}     
               <div class="icons-badge">
-                <img src="{{ section.settings.icon-1 | img_url: '148x148' }}" alt="Icon 1" srcset="{{ section.settings.icon-1 | img_url: '296x296', scale: 2 }} 2x">
-                <img src="{{ section.settings.icon-2 | img_url: '148x148' }}" alt="Icon 2" srcset="{{ section.settings.icon-2 | img_url: '296x296', scale: 2 }} 2x">
+                <img 
+                  src="{{ section.settings.icon-1 | img_url: '148x148' }}" 
+                  srcset="{{ section.settings.icon-1 | img_url: '296x296', scale: 2 }} 2x"
+                  alt="Third Party Lab Tested"   
+                >
+                <img 
+                  src="{{ section.settings.icon-2 | img_url: '148x148' }}" 
+                  srcset="{{ section.settings.icon-2 | img_url: '296x296', scale: 2 }} 2x"
+                  alt="Organic Farming" 
+                >
               </div> 
             {% endif %}  
             {% if section.settings.button_label != blank and section.settings.button_link != blank %}
@@ -79,7 +88,7 @@
           data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
           data-aspectratio="{{ section.settings.mobile_image.aspect_ratio }}"
           data-sizes="auto"
-          alt="{{ section.settings.mobile_image.alt | escape }}"
+          alt="{{ section.settings.title }} Featured Image"
         >   
       </div>
     </div>
