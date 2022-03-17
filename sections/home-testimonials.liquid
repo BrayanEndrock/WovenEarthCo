@@ -1,248 +1,112 @@
-<div class="home-testimonials--wrapper">
+<div class="home-testimonials--wrapper">        
     <div class="wrapper">
-        <div class="grid">   
-            <div class="grid__item medium-down--one-whole large--one-third feature-image-list--content">
+        <div class="grid">
+            <div class="grid__item one-whole text-center title--wrapper">
                 <h2>{{ section.settings.title }}</h2>
-            </div>       
-
-            <div class="grid__item medium-down--one-whole large--two-third home-testimonial-blocks">               
-                {% for block in section.blocks %}
-                    <div class="feature-image-list--item">
-                        <div class="feature-image-list--item-wrapper"> 
-                            <div class="grid" id="contentGrid">     
-                                <div class="grid__item one-whole">     
-                                    <figure class="image-wrapper review-wrapper">
-                                        {% assign img_url = block.settings.img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
-                                        <img src="{{ block.settings.img | img_url: '280x415' }}" srcset="{{ block.settings.img | img_url: '560x830', scale: 2 }} 2x" alt="Expert Testimonial">
-                                    </figure>
-                                </div>
-                                <div class="grid__item one-whole">   
-                                    <div class="container-text text-left">
-                                        <div>{{ block.settings.content }}</div>     
-                                        <span class="author">{{ block.settings.author }}</span>     
-                                        <a class="btn large--hide medium-down--show" href="{{ section.settings.cta_url }}">{{ section.settings.cta_label }}</a>  
-                                    </div>
-                                </div>     
-                            </div> 
+                <hr class="hr--small">   
+            </div> 
+        </div>
+    </div>       
+    <div class="wrapper">
+        <div class="grid">  
+            <div class="experts-slider__wrapper experts--slider">
+                {% for block in section.blocks %}                 
+                    <div class="grid__item expert-testimonial--box">
+                        <div class="grid--uniform">               
+                            <div class="grid__item large--one-third medium-down--one-whole expert-image--wrapper">
+                                {% assign img_url = block.settings.img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                                <img class="lazyload"
+                                    src="{{ block.settings.img | img_url: '278x416' }}"
+                                    srcset="{{ block.settings.img | img_url: '556x832' }}"
+                                    data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                                    data-aspectratio="{{ block.settings.img.aspect_ratio }}"  
+                                    data-sizes="auto"
+                                    alt="{{ block.settings.author }} Featured Image"
+                                />       
+                            </div>
+                            <div class="grid__item large--two-thirds medium-down--one-whole copy--wrapper">
+                                <img
+                                    class="lazyload medium-down--hide" 
+                                    src="{{ section.settings.quotes-mark | img_url: '114x88' }}" 
+                                    alt="Quotes Mark" 
+                                    srcset="{{ section.settings.quotes-mark | img_url: '228x176', scale: 2 }} 2x"
+                                >
+                                {{ block.settings.content }}
+                                <h5 class="author">{{ block.settings.author }}</h5>
+                            </div>
                         </div>
-                        <!-- /.feature-image-list--item --> 
                     </div>
                 {% endfor %}
             </div>
         </div>
+    </div>       
+    <div class="wrapper">
+        <div class="grid">    
+            <div class="grid__item one-whole text-center cta--wrapper">
+                {% if section.settings.cta_url != blank %}
+                    <a class="btn" href="{{ section.settings.cta_url }}">
+                        {{ section.settings.cta_label }}  
+                    </a>
+                {% endif %}        
+            </div>
+        </div>
     </div>
-</div>
-
-{% stylesheet 'scss' %}
-    .home-testimonials {
-        margin: 0 !important;
-        padding: 132px 0;       
-        color: var(--dark); 
-        background-color: var(--tertiary);
-        @media only screen and (max-width: 768px) {
-            padding: 37px 0 40px;          
-        }       
-        .home-testimonials--wrapper {    
-            .grid {        
-                display: flex;
-                @media screen and (max-width: 768px) {
-                    flex-direction: column;            
-                }
-                .grid__item {
-                    &:first-child {
-                        justify-content: center;
-                        display: flex;
-                        flex-direction: column;
-                    }
-                }
-            }
-            .container-text {
-                @media screen and (max-width: 768px) {
-                    margin: 0px !important;              
-                }
-            }
-            .home-testimonial-blocks {         
-                //display: flex;
-                //justify-content: space-around;
-            }
-            h2 {
-                color: var(--dark);
-                font-size: 50.8px;
-                line-height: 65px;
-                @media screen and (max-width: 768px) {
-                    max-width: 280px;
-                    font-weight: normal;
-                    font-size: 28px;
-                    line-height: 32px;           
-                    margin: 0 0 27px 20px;
-                }
-            }
-            .btn {
-                background: var(--dark);
-                color: var(--light);
-                width: fit-content;
-            }
-            .feature-image-list--item {               
-                figure {
-                    //width: 280px;
-                    //height: 415px;   
-                    margin-left: 50px;             
-                    overflow: hidden;   
-                    //border-radius: 145px;
-                    img {
-                        @media screen and (max-width: 768px) {
-                            width: 232px;           
-                        }
-                    }
-                }
-                &:nth-child(even) {
-                    figure {
-                        border-bottom-left-radius: 0;
-                        border-bottom-right-radius: 0;
-                    }
-                }
-                p {
-                    text-align: left;    
-                    max-width: 334px;
-                    font-family: 'Roboto', sans-serif;
-                    font-weight: normal;
-                    font-size: 16px;
-                    line-height: 32px;
-                    color: #000000;
-                    margin-bottom: 62px;
-                    @media screen and (max-width: 768px) {      
-                        max-width: 278px !important;   
-                        font-size: 12px !important;
-                        line-height: 24px !important;
-                        margin:31px auto 23px;   
-                    }    
-                }
-                .author {
-                    font-family: 'Roboto', sans-serif;
-                    font-weight: bold;    
-                    font-size: 20px;
-                    line-height: 32px;
-                    color: #000000;
-                    max-width: 310px; 
-                    @media screen and (max-width: 768px) {
-                        font-size: 16px; 
-                        margin-left: 50px;               
-                    }          
-                }
-                a.btn {
-                    @media screen and (max-width: 768px) {
-                        padding: 10px 36px;
-                        font-family: 'Roboto', sans-serif;          
-                        font-weight: bold;
-                        font-size: 16px;
-                        line-height: 19px;
-                        margin-left: 50px;    
-                        margin-top: 17px;                    
-                    }    
-                }
-                .feature-image-list--item-wrapper {     
-                    .grid {
-                        display: flex;
-                        @media screen and (min-width: 768px) {
-                            align-items: center;    
-                        } 
-                    } 
-                    #contentGrid {     
-                        @media screen and (max-width: 768px) {        
-                                  
-                        }
-                    }      
-                }
-            }
-        }
-
-        @media (max-width: 768px) {
-
-            .home-testimonials--wrapper {
-                
-                .grid-uniform {
-                    flex-direction: column;
-                    margin: 0;
-                }    
-                .home-testimonial-blocks {
-                    margin: 0;
-                    padding: 0;
-
-                    .feature-image-list--item {
-                        .feature-image-list--item-wrapper {
-                            width: 100%;
-                            margin: auto;
-                        }    
-                    }
-        
-                    .grid__item {
-                        padding: 0;
-                        overflow: hidden;
-
-                        figure {
-                            img {
-                                
-                            }
-                        }
-                    }
-                }
-            }		
-        }
-    }
-{% endstylesheet %}
+</div>            
 
 {% javascript %}
-$(document).ready(function(){
-    const homeTestimonialsCarousel = $('');     
-    let getSliderSettings = () => {
-        return {
-            infinite: true,
-            dots: false,
-            arrows: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            responsive: [
-            {
-                breakpoint: 9999,
-                settings: "unslick"
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    infinite: true,
-                    dots: false,
-                    arrows: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
+    $(document).ready(function() {            
+        const expertsSlider = $('.experts--slider');               
+        let getSliderSettings = () => {
+            return {
+                infinite: true,       
+                dots: false,
+                arrows: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                adaptiveHeight: true,                                       
+                responsive: [              
+                    {          
+                        breakpoint: 767,
+                        settings: {
+                            infinite: true,                     
+                            dots: false,
+                            arrows: true,
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]       
             }
-            ]
-        }
-    }
-    homeTestimonialsCarousel.slick(getSliderSettings());
-});
+        }    
+        expertsSlider.slick(getSliderSettings());
+    });                               
 {% endjavascript %}
 
-{% schema %}
-{
-    "name": "Home testimonials",
-    "class": "home-testimonials",
-    "settings": [
-        {
-            "type": "text",
-            "id": "title",
-            "label": "Title"
-        },
-        {
-            "type": "text",
-            "id": "cta_label",
-            "label": "Button label"
-        },
-        {
-            "type": "url",
-            "id": "cta_url",
-            "label": "Button link"
-        }
+{% schema %}     
+    {
+        "name": "Expert Tstimonials",
+        "class": "home-testimonials",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+                "type": "image_picker",
+                "id": "quotes-mark",
+                "label": "Quotes Mark"
+            },
+            {
+                "type": "text",
+                "id": "cta_label",
+                "label": "Button label"
+            },
+            {
+                "type": "url",
+                "id": "cta_url",
+                "label": "Button link"
+            }
         ],
         "blocks": [
             {
@@ -284,9 +148,207 @@ $(document).ready(function(){
         ],
         "presets": [
             {
-                "category": "Woven Earth",
-                "name":"Home testimonials"
+                "category": "Home",
+                "name":"Expert Testimonials"
             }
         ]
-}
+    }
 {% endschema %}
+
+{% stylesheet 'scss' %}  
+.home-testimonials {
+	margin: 0 !important;    
+	.home-testimonials--wrapper {
+		padding: 61px 0 72px;
+		background-color: var(--tertiary);
+		@media screen and (max-width: 768px) {
+			padding: 37px 0 40px;
+		}
+		.title--wrapper {
+			margin-bottom: 31px;
+			@media screen and (max-width: 768px) {
+				margin-bottom: 19px;
+			}      
+			h2 {
+				max-width: 614px;         
+				font-style: normal;
+				font-weight: normal;
+				font-size: 48px;
+				line-height: 65px;
+				text-align: center;
+				color: #1F322F;
+				letter-spacing: 0;
+				text-align: center;
+				margin: 0 auto;
+				@media screen and (max-width: 768px) {
+					max-width: 280px;
+					font-size: 28px;
+					line-height: 32px;
+				}      
+			}
+			hr {
+				margin: 17px auto 0;
+				width: 100px;      
+				text-align: center; 
+				@media screen and (max-width: 768px) {
+					display: none;
+				}      
+			}
+		}
+		.left--arrow {
+			position: relative;
+			z-index: 12;      
+			left: -5px;
+			top: 233px; 
+			@media screen and (max-width: 768px) {
+				top: 822px;
+				left: 155px;
+			}               
+		}
+		.right--arrow {     
+			position: relative;
+			z-index: 12;
+			top: 233px;
+			left: 98.5%;
+			@media screen and (max-width: 768px) {
+				top: 822px;        
+				left: 55.5%;
+			}                         
+		}
+		.experts-slider__wrapper {                      
+			.expert-testimonial--box {
+				background-color: #FFFFFF;
+				border-radius: 20px;             
+				margin: 0 auto 20px;      
+				padding: 32px;
+				@media screen and (max-width: 768px) {
+					padding: 24px 0;    
+					margin-left: 35px;              
+					margin-right: 20px;
+					margin-bottom: 40px;                                      
+				}
+				.grid--uniform {
+					display: flex;
+					align-items: center; 
+					@media screen and (max-width: 768px) {
+						flex-direction: column;       
+					}      
+				}
+				.expert-image--wrapper {
+					padding-left: 0;
+					img {
+						border-radius: 20px; 
+						@media screen and (max-width: 768px) {
+							display: block;
+							margin: 0 auto;
+						}        
+					}     
+				} 
+				.copy--wrapper {
+					@media screen and (max-width: 768px) {
+						margin-top: 30px;
+					}
+					img {
+						position: absolute;
+						top: 40px;    
+					}
+					p {     
+						max-width: 520px;
+						font-family: 'Roboto', sans-serif;
+						font-style: normal;
+						font-weight: normal;
+						font-size: 24px;
+						line-height: 32px;
+						color: #1A322F;
+						position: relative;
+						@media screen and (max-width: 768px) {         
+							max-width: 269px;
+							font-size: 18px;
+							line-height: 24px;
+							text-align: center;
+							margin: 0 auto;   
+						}
+					}
+					.author {
+						max-width: 400px;      
+						font-family: 'Roboto', sans-serif;
+						font-style: normal;
+						font-weight: bold;
+						font-size: 24px;
+						line-height: 32px;
+						text-transform: uppercase;
+						color: #1A322F;
+						margin-top: 24px;
+						position: relative;
+						@media screen and (max-width: 768px) {
+							width: 236px;       
+							font-size: 20px;
+							line-height: 24px;
+							text-align: center;
+							margin: 15px auto 0; 
+							text-transform: capitalize;               
+						}           
+					}
+				}
+				&:first-of-type {
+					.copy--wrapper {
+						p { 
+							max-width: 437px;
+							@media screen and (max-width: 768px) {
+								max-width: 269px;             
+							}      
+						}
+					}
+				}                       
+			} 
+			.slick-arrow {
+				border-radius: 50%;
+				background-color: #68C9AB; 
+				top: 40%;   
+				@media screen and (max-width: 768px) {
+					top: 100%;          
+				}              
+			}
+			.slick-prev {
+				left: -20px;
+				&:after {
+					content: "\276E";                              
+				}
+				@media screen and (max-width: 768px) {
+					left: 35%; 
+				}
+			}
+			.slick-next {
+				right: -20px;         
+				&:after {
+					content: "\276F";           
+				}
+				@media screen and (max-width: 768px) {
+					right: 35%;       
+				}
+			}
+		}
+		.cta--wrapper {
+			margin-top: 40px;            
+			a {
+				background-color: #1F322F;
+				width: 382px;       
+				font-family: 'Roboto', sans-serif;
+				font-style: normal;
+				font-weight: 500;
+				font-size: 24px;
+				line-height: 28px;
+				text-align: center;
+				margin: 0 auto;      
+				color: #FFFFFF;
+				text-transform: capitalize;         
+				@media screen and (max-width: 768px) {
+					width: 240px;                
+					font-size: 16px;
+					line-height: 19px;           
+				}
+			}
+		}
+	}          
+}
+{% endstylesheet %}

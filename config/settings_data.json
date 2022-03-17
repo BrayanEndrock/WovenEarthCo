@@ -301,11 +301,10 @@
           },
           "a77f291e-4f93-4e85-8305-26107ec88e78": {
             "type": "testimonial",
-            "disabled": true,
             "settings": {
-              "img": "shopify:\/\/shop_images\/testimonial-richard.jpg",
-              "content": "<p>“I recommend Woven Earth products to my patients because they are the highest quality, made from organically grown hemp, and offered at a reasonable price. Woven Earth provides full spectrum Hemp products that are more beneficial than products made with Hemp isolate.”<\/p>",
-              "author": "Richard Silver, MD | Silverlake  Wellness, Ohio",
+              "img": "shopify:\/\/shop_images\/CAM_0233-Edit-4_1.png",
+              "content": "<p>As an Integrative Health Pharmacist, I believe that optimizing health involves a multifaceted approach, including CBD. Educating our patients, family, and friends about the benefits of the cannabis plant is the first step to reframing the conversation to empower everyone to nourish our mind, body, and spirit. This is why I trust Woven Earth.<\/p>",
+              "author": "Swathi Varanasi, PharmD | Los Angeles, California",
               "max": 5,
               "date": "12\/11\/2021"
             }
@@ -317,6 +316,7 @@
         ],
         "settings": {
           "title": "What health professionals are saying.",
+          "quotes-mark": "shopify:\/\/shop_images\/Frame_a80c99fb-737e-4208-a110-6fe39a49b7ca.png",
           "cta_label": "Learn more",
           "cta_url": "https:\/\/wovenearth.com\/pages\/about-us"
         }
@@ -331,9 +331,9 @@
           "title": "The Woven Earth difference.",
           "text": "",
           "button_label": "Learn More",
-          "button_link": "shopify:\/\/products\/relief-full-spectrum-hemp",
-          "icon-1": "shopify:\/\/shop_images\/icon-1.png",
-          "icon-2": "shopify:\/\/shop_images\/icon-2.png"
+          "button_link": "",
+          "icon-1": "shopify:\/\/shop_images\/Third.png",
+          "icon-2": "shopify:\/\/shop_images\/Organic.png"
         }
       },
       "16216059101b410950": {
