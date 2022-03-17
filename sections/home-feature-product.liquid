@@ -1,0 +1,180 @@
+<div class="feature-product-container">   
+    <div class="grid">
+        <div class="grid__item large--one-half">
+            <img src="{{ section.settings.product-image | img_url: '592x680' }}" srcset="{{ section.settings.product-image | img_url: '1184x1360', scale: 2}} 2x" alt="Product Image">
+        </div>   
+        <div class="grid__item large--one-half product-box">   
+            <div class="wrapper">   
+                <div class="grid">
+                    <div class="grid__item large--one-whole">
+                        {% assign productFeature = section.settings.product %}
+                        <div class="title-price-box">  
+                            <h3>{{ productFeature.title }}</h3> 
+                            <h5>{{ productFeature.price | money_without_trailing_zeros }}</h5>               
+                        </div>
+                        <div class="reviews-badge-feature text-left">        
+                            {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false, product: productFeature %} 
+                        </div>
+                        <div class="description">{{ section.settings.description }}</div>  
+                        <a class="btn btn-feature-product" href="{{ section.settings.url }}">{{ section.settings.label }}</a>                            
+                    </div>   
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>    
+
+{% stylesheet 'scss' %}
+    .home-feature-product {
+        margin-top: 0px !important;
+        padding: 0 100px 0 150px; 
+        @media screen and (max-width: 768px) {   
+            padding: 16px 20px 48px;          
+        }    
+        .grid {
+            @media screen and (max-width: 768px) {
+                margin: 0 auto;      
+            }
+        }     
+        img {
+            @media screen and (max-width: 768px) {
+                margin-left: 15px;       
+            }
+        }            
+        .product-box {
+            padding: 75px 0; 
+            @media screen and (max-width: 768px) {
+                padding: 37px 0 0;     
+            }            
+            .title-price-box {
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between; 
+                @media screen and (max-width: 768px) {
+                    justify-content: normal;       
+                }                 
+                h3 {
+                    max-width: 330px;        
+                    font-size: 44px;
+                    line-height: 59px;
+                    color: #1A322F;
+                    text-transform: capitalize; 
+                    @media screen and (max-width: 768px) {
+                        max-width: 280px;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 28px;
+                        line-height: 32px;       
+                    }               
+                }
+                h5 {
+                    font-size: 32px;
+                    line-height: 43px;
+                    text-align: center;   
+                    color: #1A322F;
+                    position: relative;
+                    top: -10px; 
+                    @media screen and (max-width: 768px) {
+                        font-size: 24px;
+                        line-height: 32px; 
+                        top: inherit;     
+                        bottom: -40px;                   
+                    }      
+                }
+            } 
+            .reviews-badge-feature {
+                .jdgm-prev-badge__stars {     
+                    .jdgm-star {
+                        color: #AE9565 !important;                     
+                    }     
+                }
+                .jdgm-prev-badge__text {     
+                    color: #AE9565 !important;
+                    font-family: 'Roboto', sans-serif !important;  
+                    font-style: normal !important;    
+                    font-weight: 500 !important;
+                    font-size: 20px !important;
+                    line-height: 23px !important; 
+                    margin-left: 24px !important;
+                    text-decoration: underline;
+                    @media screen and (max-width: 768px) {    
+                        font-weight: normal;
+                        font-size: 13px;
+                        line-height: 15px;
+                        margin-left: 8px !important;   
+                    }         
+                }
+            }
+            .description {
+                width: 488px;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal; 
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 32px;
+                color: #000000;
+                margin: 35px 0 30px; 
+                @media screen and (max-width: 768px) {       
+                    max-width: 300px;       
+                    font-size: 12px;
+                    line-height: 24px;
+                    margin: 24px 0 16px;      
+                }  
+            }
+            .btn-feature-product {
+                padding: 13px 46px;
+                background-color: #1A322F;   
+                font-family: 'Roboto', serif;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 23px; 
+                @media screen and (max-width: 768px) {
+                    padding: 10px 39px;   
+                    font-size: 16px;
+                    line-height: 19px;      
+                }        
+            }  
+        }      
+    }
+{% endstylesheet %}
+
+{% schema %}    
+    {
+        "name": "Product",             
+        "class": "home-feature-product",    
+        "presets": [
+            {
+                "category": "Home",   
+                "name": "Home Feature - Product"   
+            }     
+        ],
+        "settings": [ 
+            {
+                "type": "image_picker",
+                "id": "product-image",
+                "label": "Product Image"
+            },     
+            {
+                "type": "product",
+                "id": "product",
+                "label": "Product"
+            },
+            {
+                "type": "richtext",
+                "id": "description",
+                "label": "Product Description"
+            },
+            {
+                "type": "url",
+                "id": "url",
+                "label": "Product Url"
+            },      
+            {
+                "type": "text",
+                "id": "label",
+                "label": "Product Label",
+                "default": "Shop Now"    
+            }
+        ]  
+    }
+{% endschema %}

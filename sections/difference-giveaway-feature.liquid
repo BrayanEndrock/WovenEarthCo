@@ -1,0 +1,303 @@
+<div class="giveaway-difference-container">
+    <h2>{{ section.settings.title }}</h2>  
+    {% assign img_url_leaf_2 = section.settings.leaf-2 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+    <img class="lazyload leaf-2"      
+        src="{{ section.settings.leaf-2 | img_url: '407x272' }}"                   
+        data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+        data-aspectratio="{{ section.settings.leaf-2.aspect_ratio }}"           
+        data-sizes="auto"
+        alt="Leaf Background"            
+    >       
+    <div class="grid content-wrapper">    
+        <div class="grid__item large--one-half copy-wrapper">
+            <div class="wrapper">      
+                <div class="copy">
+                    {{ section.settings.copy-1 }}
+                    {{ section.settings.copy-2 }}
+                </div>
+            </div>
+        </div>
+        {% assign img_url = section.settings.product-image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+        <img class="lazyload product-image" 
+            src="{{ section.settings.product-image | img_url: '392x576' }}"             
+            data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+            data-aspectratio="{{ section.settings.product-image.aspect_ratio }}"             
+            data-sizes="auto"
+            alt="Relief Cream Image"            
+        >         
+        <div class="grid__item large--one-half copy-wrapper"> 
+            <div class="wrapper">
+                <div class="copy">
+                    {{ section.settings.copy-3 }}
+                    {{ section.settings.copy-4 }}         
+                </div>
+            </div>   
+        </div>
+    </div> 
+    {% assign img_url_leaf_1 = section.settings.leaf-1 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+    <img class="lazyload leaf-1" 
+        src="{{ section.settings.leaf-1 | img_url: '240x240' }}"             
+        data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+        data-aspectratio="{{ section.settings.leaf-1.aspect_ratio }}"           
+        data-sizes="auto"
+        alt="Leaf Background"            
+    >
+    <div class="wrapper">
+        <div class="grid">
+            <div class="grid__item one-whole text-center">    
+                <h3>{{ section.settings.product-title }}</h3> 
+                <p class="sub-title">{{ section.settings.subtitle }}</p>                        
+                <a class="btn btn--feature medium-down--hide" href="#klaviyoForm">{{ section.settings.label-cta }}</a>
+                <a class="btn btn--feature large--hide" href="#klaviyoFormMobile">{{ section.settings.label-cta }}</a>     
+            </div>
+        </div>
+    </div>  
+</div>
+
+{% stylesheet 'scss' %}
+    .giveaway-difference {
+        padding: 104px 0;                                          
+        background-color: #F4F5F7; 
+        @media screen and (max-width: 768px) {
+            padding: 39px 0 56px;
+            background-color: #fff;      
+        }         
+        .giveaway-difference-container {
+            h2 {
+                max-width: 498px;
+                font-size: 56px;
+                line-height: 72px;     
+                color: #1A322F;
+                margin-left: 80px; 
+                padding: 0;
+                margin-bottom: 41px;  
+                @media screen and (max-width: 768px) {
+                    max-width: 258px;
+                    margin: 0 auto 33px;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 24px;
+                    line-height: 32px;
+                    text-align: center; 
+                    text-transform: uppercase;               
+                }                          
+            }
+            .leaf-1 {
+                position: absolute;
+                left: 0;
+                margin-top: -9.5%; 
+                @media screen and (max-width: 768px) {
+                    display: none;
+                }       
+            }
+            .leaf-2 {
+                position: absolute;     
+                right: 0;
+                margin-top: -14.2%;
+                @media screen and (max-width: 768px) {
+                    display: none;
+                }                                            
+            }
+            .content-wrapper {
+                @media screen and (max-width: 768px) {
+                    position: relative;
+                    &:before {
+                        position: absolute;
+                        content: " ";
+                        left: 0;
+                        right: 0;
+                        width: 100%;
+                        background-color: #68C9AB;
+                        height: 240px;
+                        top: 34%;
+                    }
+                }
+            }
+            .copy-wrapper {
+                background-color: #68C9AB;                
+                .copy {
+                    p {       
+                        max-width: 416px;        
+                        font-family: 'Roboto', sans-serif;    
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 18px;
+                        line-height: 32px;
+                        color: #1A322F; 
+                        @media screen and (max-width: 768px) {
+                            position: relative;     
+                            max-width: 288px;
+                            font-size: 14px;
+                            line-height: 24px;
+                            text-align: center;
+                            margin: 0 auto 16px;         
+                        }    
+                    } 
+                }        
+                &:first-of-type {
+                    padding: 50px 0 54px 82px;
+                    position: relative;
+                    z-index: 1;     
+                    @media screen and (max-width: 768px) {
+                        padding: 23px 0 9px 0;
+                    }                             
+                }
+                &:last-of-type {    
+                    margin-top: 80px;                  
+                    padding: 42px 82px 30px 130px;              
+                    @media screen and (max-width: 768px) {
+                        margin-top: 0;           
+                        background-color: #fff;
+                        padding: 0;          
+                    }                                                                    
+                }        
+            }
+            .product-image {     
+                margin: 0 auto;
+                display: block;
+                position: absolute;
+                left: 35%;      
+                margin-top: -3.5%;                        
+                z-index: 2;     
+                @media screen and (max-width: 768px) {
+                    position: relative;
+                    height: 336px;
+                    margin-bottom: 20px;  
+                    left: 0;                             
+                }              
+            }
+            h3 {
+                max-width: 750px;
+                font-family: 'Abril Fatface', sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 32px;
+                line-height: 48px;
+                text-align: center;
+                text-transform: inherit;            
+                color: #1A322F;
+                margin: 100px auto 16px;                        
+                padding: 0;           
+                letter-spacing: 0;  
+                @media screen and (max-width: 768px) {
+                    max-width: 258px;         
+                    font-size: 16px;         
+                    line-height: 32px;
+                    margin: 27px auto 16px; 
+                    text-transform: unset;
+
+                }                       
+            }
+            .sub-title {
+                padding: 0;
+                font-family: 'Roboto', sans-serif;          
+                font-style: normal;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 24px;
+                color: #1A322F;
+                margin:0 auto 36px;
+                @media screen and (max-width: 768px) {
+                    font-size: 14px;
+                    line-height: 24px;
+                    text-align: center;
+                    color: #1A322F;
+                    margin-bottom: 30px;                          
+                }
+            }
+            .btn--feature {
+                font-family: 'Lato', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 34px;
+                text-transform: uppercase;
+                color: #FFFFFF;
+                background-color: #1A322F;
+                padding: 14px 32px; 
+                @media screen and (max-width: 768px) {
+                    width: 100%;         
+                    background-color: #195850; 
+                    font-size: 20px;
+                    line-height: 34px;  
+                    text-transform: capitalize; 
+                    padding-top: 10px;
+                    padding-bottom: 10px;            
+                }                 
+            }
+        }
+    }
+{% endstylesheet %}
+
+{% schema %}
+    {
+        "name": "Difference - Giveaway",           
+        "class": "giveaway-difference",
+        "settings": [ 
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title - Giveaway Feature",  
+                "default": "The Woven Earth Difference"                
+            },
+            {
+                "type": "richtext",
+                "id": "copy-1",
+                "label": "Copy"
+            },
+            {
+                "type": "richtext",     
+                "id": "copy-2",
+                "label": "Copy"      
+            },
+            {
+                "type": "richtext",     
+                "id": "copy-3",
+                "label": "Copy"      
+            },
+            {
+                "type": "richtext",     
+                "id": "copy-4",
+                "label": "Copy"      
+            },
+            {
+                "type": "image_picker",
+                "id": "product-image",
+                "label": "Product"
+            },       
+            {
+                "type": "text",
+                "id": "product-title",       
+                "label": "Product Title",
+                "default": "Enter to win this bundle, typically worth $88, now absolutely free!"
+            },
+            {
+                "type": "text",
+                "id": "subtitle",
+                "label": "Subtitle",
+                "default": "We draw new winners every month!"
+            },
+            {
+                "type": "url",
+                "id": "url-cta",
+                "label": "Url CTA"
+            },
+            {
+                "type": "text",
+                "id": "label-cta",
+                "label": "Label CTA",
+                "default": "Enter now"    
+            },
+            {
+                "type": "image_picker",
+                "id": "leaf-1",
+                "label": "Leaf"
+            },
+            {
+                "type": "image_picker",
+                "id": "leaf-2",
+                "label": "Leaf"
+            }   
+        ]
+    }
+{% endschema %}

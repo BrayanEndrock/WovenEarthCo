@@ -1,0 +1,322 @@
+<div class="feature-main-banner--wrapper">
+	<div class="feature-main-banner--content">
+		{% unless section.settings.title == blank %}
+			<h1>{{ section.settings.title }}</h1>
+		{% endunless %}
+
+		{% unless section.settings.button_link == blank %}
+			<a class="btn btn-tweak" href="{{section.settings.button_link}}">{{section.settings.button_label}}</a>
+		{% endunless %}    
+	</div>
+
+    <div class="feature-main-banner--background" style="background-image: url({{ section.settings.banner_image | img_url: 'master' }});"></div>
+    <div class="feature-main-banner--product">
+        <img src="{{ section.settings.product_image | img_url: 'master' }}"/>
+    </div>
+</div>
+<!-- /.feature-main-banner--wrapper -->
+
+{% schema %}
+{
+  "name": {
+	"cs": "Prezentace",
+	"da": "Diasshow",
+	"de": "Main Banner",
+	"en": "Main Banner",
+	"es": "Main Banner",
+	"fi": "Diaesitys",
+	"fr": "Diaporama",
+	"it": "Presentazione",
+	"ja": "スライドショー",
+	"ko": "슬라이드 쇼",
+	"nb": "Lysbildefremvisning",
+	"nl": "Diavoorstelling",
+	"pl": "Pokaz slajdów",
+	"pt-BR": "Apresentação de slides",
+	"pt-PT": "Apresentação de diapositivos",
+	"sv": "Bildspel",
+	"th": "สไลด์โชว์",
+	"tr": "Slayt gösterisi",
+	"vi": "Bản trình chiếu",
+	"zh-CN": "幻灯片",
+	"zh-TW": "素材輪播"
+  },
+  "class": "main-hero-banner",
+  "settings": [
+	{
+		"type": "select",
+		"id": "hero_layout",
+		"label": "Hero layout",
+		"options": [
+		{
+			"value": "simple",
+			"label": "Simple"
+		},
+		{
+			"value": "heading",
+			"label": "Heading image"
+		}
+		],
+		"default": "simple"
+	},
+	{
+		"type": "image_picker",
+		"id": "banner_image",
+		"label": {
+		"cs": "Obrázek",
+		"da": "Billede",
+		"de": "Foto",
+		"en": "Image",
+		"es": "Imagen",
+		"fi": "Kuva",
+		"fr": "Image",
+		"it": "Immagine",
+		"ja": "画像",
+		"ko": "이미지",
+		"nb": "Bilde",
+		"nl": "Afbeelding",
+		"pl": "Obraz",
+		"pt-BR": "Imagem",
+		"pt-PT": "Imagem",
+		"sv": "Bild",
+		"th": "รูปภาพ",
+		"tr": "Görsel",
+		"vi": "Hình ảnh",
+		"zh-CN": "图片",
+		"zh-TW": "圖片"
+		}
+	},
+	{
+		"type": "image_picker",
+		"id": "product_image",
+		"label": {
+		"cs": "Obrázek",
+		"da": "Billede",
+		"de": "Foto",
+		"en": "Product image",
+		"es": "Imagen de producto",
+		"fi": "Kuva",
+		"fr": "Image",
+		"it": "Immagine",
+		"ja": "画像",
+		"ko": "이미지",
+		"nb": "Bilde",
+		"nl": "Afbeelding",
+		"pl": "Obraz",
+		"pt-BR": "Imagem",
+		"pt-PT": "Imagem",
+		"sv": "Bild",
+		"th": "รูปภาพ",
+		"tr": "Görsel",
+		"vi": "Hình ảnh",
+		"zh-CN": "图片",
+		"zh-TW": "圖片"
+		}
+	},
+	{
+		"type": "text",
+		"id": "title",
+		"label": {
+		"cs": "Nadpis",
+		"da": "Overskrift",
+		"de": "Titel",
+		"en": "Heading",
+		"es": "Título",
+		"fi": "Otsake",
+		"fr": "En-tête",
+		"it": "Heading",
+		"ja": "見出し",
+		"ko": "제목",
+		"nb": "Overskrift",
+		"nl": "Kop",
+		"pl": "Nagłówek",
+		"pt-BR": "Título",
+		"pt-PT": "Título",
+		"sv": "Rubrik",
+		"th": "ส่วนหัว",
+		"tr": "Başlık",
+		"vi": "Tiêu đề",
+		"zh-CN": "标题",
+		"zh-TW": "標題"
+		},
+		"default": {
+		"cs": "Obrázkový snímek",
+		"da": "Billeddias",
+		"de": "Foto-Slide",
+		"en": "Image slide",
+		"es": "Diapositiva de imagen",
+		"fi": "Kuvadia",
+		"fr": "Diapositive (image)",
+		"it": "Slide immagine",
+		"ja": "画像スライド",
+		"ko": "이미지 슬라이드",
+		"nb": "Lysbilde",
+		"nl": "Afbeelding dia",
+		"pl": "Slajd obrazu",
+		"pt-BR": "Slide de imagem",
+		"pt-PT": "Diapositivo de imagem",
+		"sv": "Bild i bildspel",
+		"th": "สไลด์รูปภาพ",
+		"tr": "Görsel slaytı",
+		"vi": "Trang chiếu hình ảnh",
+		"zh-CN": "图片幻灯片",
+		"zh-TW": "圖片投影片"
+		}
+	},
+	{
+		"type": "text",
+		"id": "subheading",
+		"label": {
+		"cs": "Podnadpis",
+		"da": "Underoverskrift",
+		"de": "Untertitel",
+		"en": "Subheading",
+		"es": "Subtítulo",
+		"fi": "Alaotsikko",
+		"fr": "Sous-titre",
+		"it": "Sottotitolo",
+		"ja": "小見出し",
+		"ko": "소제목",
+		"nb": "Underoverskrift",
+		"nl": "Subkop",
+		"pl": "Nagłówek podrzędny",
+		"pt-BR": "Subtítulo",
+		"pt-PT": "Subtítulo",
+		"sv": "Underrubrik",
+		"th": "หัวเรื่องย่อย",
+		"tr": "Alt başlık",
+		"vi": "Tiêu đề phụ",
+		"zh-CN": "副标题",
+		"zh-TW": "子標題"
+		},
+		"default": {
+		"cs": "Představte příběh své značky prostřednictvím obrázků",
+		"da": "Fortæl dit brands historie gennem billeder",
+		"de": "Erzählen Sie Ihre Geschichte mit Fotos",
+		"en": "Tell your brand's story through images",
+		"es": "Cuenta la historia de tu marca a través de videos e imágenes",
+		"fi": "Kerro tuotemerkkisi tarina kuvien kautta",
+		"fr": "Racontez votre histoire avec des images",
+		"it": "Racconta la storia del tuo brand con video e immagini",
+		"ja": "あなたのブランドのストーリーをビデオや画像で伝える",
+		"ko": "이미지를 통해 브랜드 스토리 이야기하기",
+		"nb": "Fortell merkevarens historie gjennom bilder",
+		"nl": "Vertel met afbeeldingen het verhaal van je merk",
+		"pl": "Opowiedz historię swojej marki za pomocą obrazów",
+		"pt-BR": "Conte a história da sua marca com vídeos e imagens",
+		"pt-PT": "Conte a história da sua marca através de imagens",
+		"sv": "Berätta ditt varumärkes historia genom video och bilder",
+		"th": "บอกเล่าเรื่องราวของแบรนด์คุณผ่านรูปภาพ",
+		"tr": "Görsellerle marka öykünüzü anlatın",
+		"vi": "Chia sẻ câu chuyện thương hiệu của bạn qua hình ảnh",
+		"zh-CN": "通过图片讲述您的品牌故事",
+		"zh-TW": "用圖片講述您的品牌故事"
+		}
+	},
+	{
+		"type": "text",
+		"id": "button_label",
+		"label": {
+		"cs": "Text tlačítka",
+		"da": "Knaptekst",
+		"de": "Button-Name",
+		"en": "Button label",
+		"es": "Etiqueta de botón",
+		"fi": "Tekstipainike",
+		"fr": "Texte du bouton",
+		"it": "Etichetta pulsante",
+		"ja": "ボタンのラベル",
+		"ko": "버튼 레이블",
+		"nb": "Knappetikett",
+		"nl": "Knoplabel",
+		"pl": "Przycisk z etykietą",
+		"pt-BR": "Etiqueta de botão",
+		"pt-PT": "Etiqueta do botão",
+		"sv": "Knappetikett",
+		"th": "ป้ายกำกับปุ่ม",
+		"tr": "Düğme etiketi",
+		"vi": "Nhãn nút",
+		"zh-CN": "按钮标签",
+		"zh-TW": "按鈕標籤"
+		}
+	},
+	{
+		"type": "url",
+		"id": "button_link",
+		"label": {
+		"cs": "Tlačítkový odkaz",
+		"da": "Knaplink",
+		"de": "Button-Link",
+		"en": "Button link",
+		"es": "Enlace de la diapositiva",
+		"fi": "Painikelinkki",
+		"fr": "Lien du bouton",
+		"it": "Link slide",
+		"ja": "ボタンのリンク",
+		"ko": "버튼 링크",
+		"nb": "Kobling for knapp",
+		"nl": "Knoplink",
+		"pl": "Link przycisku",
+		"pt-BR": "Link do slide",
+		"pt-PT": "Ligação do botão",
+		"sv": "Knapplänk",
+		"th": "ลิงก์ปุ่ม",
+		"tr": "Düğme bağlantısı",
+		"vi": "Liên kết trên nút",
+		"zh-CN": "按钮链接",
+		"zh-TW": "按鈕連結"
+		}
+	}
+  ],
+  "presets": [
+	{
+	  "name": {
+		"cs": "Prezentace",
+		"da": "Diasshow",
+		"de": "Main Banner",
+		"en": "Main Banner",
+		"es": "Main Banner",
+		"fi": "Diaesitys",
+		"fr": "Diaporama",
+		"it": "Presentazione",
+		"ja": "スライドショー",
+		"ko": "슬라이드 쇼",
+		"nb": "Lysbildefremvisning",
+		"nl": "Diavoorstelling",
+		"pl": "Pokaz slajdów",
+		"pt-BR": "Apresentação de slides",
+		"pt-PT": "Apresentação de diapositivos",
+		"sv": "Bildspel",
+		"th": "สไลด์โชว์",
+		"tr": "Slayt gösterisi",
+		"vi": "Bản trình chiếu",
+		"zh-CN": "幻灯片",
+		"zh-TW": "素材輪播"
+	  },
+	  "category": {
+		"cs": "Obrázek",
+		"da": "Billede",
+		"de": "Foto",
+		"en": "Image",
+		"es": "Imagen",
+		"fi": "Kuva",
+		"fr": "Image",
+		"it": "Immagine",
+		"ja": "画像",
+		"ko": "이미지",
+		"nb": "Bilde",
+		"nl": "Afbeelding",
+		"pl": "Obraz",
+		"pt-BR": "Imagem",
+		"pt-PT": "Imagem",
+		"sv": "Bild",
+		"th": "รูปภาพ",
+		"tr": "Görsel",
+		"vi": "Hình ảnh",
+		"zh-CN": "图片",
+		"zh-TW": "圖片"
+	  }
+	}
+  ]
+}
+{% endschema %}

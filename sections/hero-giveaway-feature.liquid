@@ -1,0 +1,174 @@
+<div class="giveaway-hero-container" id="klaviyoForm">    
+    {% assign img_url = section.settings.background-image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+    <img class="lazyload leaf-image"    
+        src="{{ section.settings.background-image | img_url: '176x176' }}"                  
+        data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+        data-aspectratio="{{ section.settings.background-image }}"        
+        data-sizes="auto"
+        alt="Leaf Image"               
+    >
+    <div class="wrapper">
+        <div class="grid hero-content">     
+            <div class="grid__item one-half hero-content-wrapper">            
+                <h1 class="hero-title">{{ page.title }}</h1> 
+                {{ page.content }}        
+                <div class="klaviyo-form-WPS6T2 medium-down--hide"></div>                                                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hero-mobile-container large--hide" id="klaviyoFormMobile">       
+    <div class="wrapper">                
+        {{ page.content }}             
+        <div class="klaviyo-form-WPS6T2"></div>          
+    </div>
+</div>
+
+<style>
+    .giveaway-hero-container {
+        background-image: url({{ section.settings.hero | img_url: 'master' }});          
+        background-position: center;                 
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 752px;         
+        width: auto;
+    }  
+    @media screen and (max-width: 768px) {   
+        .giveaway-hero-container {
+            background-image: url({{ section.settings.hero-mobile | img_url: 'master' }});          
+            height: 547px;    
+        }    
+    }  
+</style>
+
+{% stylesheet 'scss' %}
+    .giveaway-hero {
+        margin-top: -37px; 
+        background-color: #F4F5F7;           
+        @media screen and (max-width: 768px) {     
+            margin-top: -23px;                      
+        }
+        .giveaway-hero-container {
+            padding-top: 87px;  
+            @media screen and (max-width: 768px) {
+                padding-top: 55px;          
+            }     
+            .leaf-image {
+                position: absolute;
+                right: 0;  
+                margin-top: -5%;  
+                @media screen and (max-width: 768px) {
+                    display: none;            
+                }   
+            }
+            .hero-content {
+                display: flex;
+                justify-content: flex-end;
+                align-content: center;
+                align-items: center;
+                @media screen and (max-width: 768px) {
+                    justify-content: center;         
+                }
+                .hero-content-wrapper {  
+                    padding-left: 150px;
+                    @media screen and (max-width: 768px) {
+                        padding-left: 0;
+                    }        
+                    h1.hero-title {
+                        max-width: 330px;
+                        font-style: normal;
+                        font-weight: normal;          
+                        font-size: 60px;
+                        line-height: 72px;
+                        color: #1A322F;
+                        text-align: left; 
+                        margin-bottom: 0 !important; 
+                        padding: 0;
+                        @media screen and (max-width: 768px) {
+                            max-width: 188px;
+                            font-size: 24px;
+                            line-height: 32px;
+                            text-align: center;
+                            text-transform: uppercase;         
+                            color: #FFFFFF;
+                            text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.5);
+                            margin: 0 auto !important;
+                        }                      
+                    }       
+                    p {
+                        max-width: 382px;
+                        font-family: 'Roboto', sans-serif;          
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 18px;
+                        line-height: 24px;
+                        color: #1A322F;
+                        margin-bottom: 26px;
+                        @media screen and (max-width: 768px) {
+                            display: none;        
+                        }
+                    } 
+                    .klaviyo-form-WPS6T2  {
+                        button {
+                            padding-top: 16px !important;
+                            padding-bottom: 16px !important;        
+                        }
+                        span.ql-font-roboto {
+                            position: relative !important;        
+                            left: 20px !important;
+                        }
+                    } 
+                }
+            }           
+        } 
+        .hero-mobile-container {      
+            background-color: #F4F5F7; 
+            p {
+                max-width: 223px;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 24px;
+                text-align: center;
+                color: #1A322F;
+                margin: 4px auto 17px !important;          
+            }   
+            .klaviyo-form-WPS6T2 {                  
+                span.ql-font-roboto {
+                    max-width: 285px !important;
+                    font-style: normal !important;         
+                    font-weight: normal !important; 
+                    font-size: 10px !important; 
+                    line-height: 16px !important;              
+                    position: relative !important; 
+                    margin: 0 auto 40px !important;                                
+                }                   
+            }             
+        }          
+    }
+{% endstylesheet %}
+
+{% schema %}
+    {
+        "name": "Hero - Giveaway Landing",
+        "class": "giveaway-hero",
+        "settings": [  
+            {
+                "type": "image_picker",     
+                "id": "hero",
+                "label": "Hero - Giveaway Landing"   
+            },
+            {
+                "type": "image_picker",     
+                "id": "hero-mobile",
+                "label": "Hero Mobile - Giveaway Landing"   
+            },
+            {
+                "type": "image_picker",
+                "id": "background-image",
+                "label": "Background Image"
+            }
+        ] 
+    }
+{% endschema %}

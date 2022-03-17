@@ -1,0 +1,38 @@
+<script src="https://widget.reviews.io/product/dist.js"></script>
+<script src="https://widget.reviews.io/rating-snippet/dist.js"></script>
+<link rel="stylesheet" href="https://widget.reviews.io/rating-snippet/dist.css" />
+<script>
+    ratingSnippet("ruk_rating_snippet",{
+        store: "wovenearth-com.myshopify.com",
+        color: "#0E1311",
+        linebreak: true,
+        text: "Reviews",
+        minRating: 4,
+        callback:function() {
+                        var snippet = document.querySelectorAll(".ruk_rating_snippet");
+              for(var i=0;i<snippet.length;i++) {
+                  snippet[i].onclick = function(event) {
+
+                  }
+              }
+                                          {% if template.name == 'product' %}
+                            var snippet = document.querySelectorAll(".ruk_rating_snippet");
+              for(var i=0;i<snippet.length;i++) {
+                  snippet[i].onclick = function(event) {
+                      // var productWidget = document.getElementById('ReviewsWidget').scrollIntoView({behavior: "smooth"});
+                      const yOffset = -50;
+                      const element = document.getElementById('ReviewsWidget');
+                      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                      window.scrollTo({top: y, behavior: 'smooth'});
+                  }
+              }
+                            {% endif %}
+              
+                              }
+    });
+</script>
+<style>
+.ruk_rating_snippet > .ruk-rating-snippet-count {
+    font-family: inherit!important;
+}
+</style>

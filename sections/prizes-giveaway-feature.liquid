@@ -1,0 +1,362 @@
+<div class="giveaway-prizes-container">
+    <h2>{{ section.settings.title }}</h2>
+    <div class="grid">
+        <div class="grid__item one-whole product-left-wrapper">
+            <div class="wrapper">
+                <div class="grid">
+                    <div class="grid__item large--one-half product-image-box">  
+                        <h3>{{ section.settings.title-product-left }}</h3>
+                        {% assign img_url_product_left = section.settings.image-product-left | img_url_product_left: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                        <img class="lazyload"               
+                            src="{{ section.settings.image-product-left | img_url: '352x456' }}"                   
+                            data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                            data-aspectratio="{{ section.settings.image-product-left.aspect_ratio }}"           
+                            data-sizes="auto"
+                            alt="Sleep Capsules Image"            
+                        >          
+                    </div>
+                    <div class="grid__item large--one-half copy-wrapper medium-down--text-center">
+                        <div class="copy">
+                            {{ section.settings.copy-1-product-left }}
+                            {{ section.settings.copy-2-product-left }}    
+                        </div>
+                        <a class="btn btn--shop-now" target="_blank" href="{{ section.settings.url-product-left }}">{{ section.settings.label-product-left }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid__item one-whole product-right-wrapper">
+            <div class="wrapper">
+                <div class="grid">
+                    <div class="grid__item large--one-half copy-wrapper  medium-down--text-center">      
+                        <div class="copy">
+                            {{ section.settings.copy-1-product-right }}
+                            {{ section.settings.copy-2-product-right }}
+                            {{ section.settings.copy-3-product-right }}             
+                        </div>
+                        <a class="btn btn--shop-now" target="_blank" href="{{ section.settings.url-product-right }}">{{ section.settings.label-product-right }}</a>
+                    </div>
+                    <div class="grid__item large--one-half product-image-box">   
+                        {% assign img_url_product_right = section.settings.image-product-right | img_url_product_right: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                        <img class="lazyload"      
+                            src="{{ section.settings.image-product-right | img_url: '300x440' }}"                                            
+                            data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                            data-aspectratio="{{ section.settings.image-product-right.aspect_ratio }}"           
+                            data-sizes="auto"
+                            alt="Relief Cream Image"                 
+                        >   
+                        <h3>{{ section.settings.title-product-right }}</h3>       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
+    <div class="grid">
+        <div class="grid__item large--one-whole text-center">                                
+            <a class="btn btn--enter-to-win medium-down--hide" href="#klaviyoForm">{{ section.settings.label-main-cta }}</a>
+            <a class="btn btn--enter-to-win large--hide" href="#klaviyoFormMobile">{{ section.settings.label-main-cta }}</a>
+        </div>
+    </div>
+</div>
+
+{% stylesheet 'scss' %}
+    .giveaway-prizes {
+        .giveaway-prizes-container {
+            padding-bottom: 96px; 
+            @media screen and (max-width: 768px) {
+                padding-bottom: 64px;          
+            }     
+            h2 {
+                padding: 0;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 56px;
+                line-height: 72px;
+                text-align: center;
+                color: #1A322F;
+                margin: 19px auto 89px;
+                @media screen and (max-width: 768px) {
+                    max-width: 258px;
+                    font-size: 24px;
+                    line-height: 32px;
+                    margin: 31px auto 25px;            
+                }         
+            }
+            .product-left-wrapper {
+                position: relative; 
+                margin-bottom: 72px;    
+                @media screen and (max-width: 768px) {
+                    margin-bottom: 40px;     
+                }          
+                &:before {
+                    position: absolute;
+                    content: " ";
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    background-color: #FAF1DD;
+                    width: 63.5%; 
+                    @media screen and (max-width: 768px) {
+                        width: 100%; 
+                        right: 0;
+                        left: 0;
+                        bottom: 0;  
+                        top: 15%;            
+                    }                                              
+                }
+                .product-image-box, .copy-wrapper {
+                    position: relative;
+                    z-index: 1;
+                }
+                .copy-wrapper {
+                    padding-top: 50px;
+                    @media screen and (max-width: 768px) {
+                        padding-top: 16px;
+                    }
+                }
+                .product-image-box {
+                    @media screen and (max-width: 768px) {
+                        display: flex;
+                        flex-direction: column-reverse;
+                        flex-wrap: wrap-reverse;         
+                        img {
+                            height: 184px;
+                            display: block;
+                            margin: 0 auto 23px;  
+                            position: relative;
+                            left: -20px;                    
+                        }       
+                    }
+                }
+            }
+            .product-right-wrapper {
+                position: relative;  
+                @media screen and (max-width: 768px) {
+                    .grid {
+                        display: flex;       
+                        flex-direction: row;                     
+                        flex-wrap: wrap-reverse; 
+                    }      
+                } 
+                &:before {
+                    position: absolute;
+                    content: " ";
+                    left: 0;
+                    bottom: 0;
+                    top: 0;
+                    background-color: #FAF1DD;
+                    width: 63.5%; 
+                    @media screen and (max-width: 768px) {
+                        width: 100%; 
+                        right: 0;
+                        left: 0;
+                        bottom: 0;
+                        top: 15%;         
+                    }                                          
+                }
+                .product-image-box, .copy-wrapper {     
+                    position: relative;
+                    z-index: 1;     
+                }
+                .copy-wrapper {
+                    padding-top: 34px;
+                    @media screen and (max-width: 768px) {
+                        padding-top: 16px;
+                    }                  
+                }
+                .product-image-box {           
+                    img {
+                        margin-top: 20px;   
+                        @media screen and (max-width: 768px) {
+                            height: 184px;
+                            display: block;
+                            margin: 0 auto 23px;         
+                        }    
+                    }
+                    h3 {
+                        margin-top: 15px;             
+                    }
+                }
+            }        
+            h3 {
+                max-width: 176px;
+                font-family: 'Abril Fatface', sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 32px;
+                line-height: 48px;
+                text-transform: uppercase;         
+                color: #AE9565;
+                padding: 0;        
+                letter-spacing: 0; 
+                @media screen and (max-width: 768px) {
+                    max-width: 200px;       
+                    font-size: 24px;
+                    line-height: 32px;
+                    text-align: center;
+                    margin: 0 auto;          
+                    text-transform: capitalize;           
+                }     
+            }
+            .copy {
+                p {
+                    max-width: 525px;                
+                    font-family: 'Roboto', sans-serif;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                    line-height: 32px;
+                    color: #1A322F;
+                    @media screen and (max-width: 768px) {
+                        max-width: 262px;
+                        font-size: 14px;
+                        line-height: 24px;            
+                        text-align: center;
+                        margin: 0 auto 16px;         
+                    }
+                }
+            }
+            .btn--shop-now {
+                font-family: 'Lato', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 34px;
+                text-transform: uppercase;
+                color: #FFFFFF;
+                padding: 14px 32px;   
+                background-color: #1A322F;           
+                margin-top: 5px;  
+                @media screen and (max-width: 768px) {
+                    font-size: 20px;
+                    line-height: 34px;
+                    padding: 10px 32px;
+                    margin-top: 17px;        
+                    text-transform: capitalize; 
+                    margin-bottom: 40px;               
+                }                             
+            }
+            .product-image-box {
+                display: flex; 
+                @media screen and (max-width: 768px) {
+                    flex-direction: column;            
+                }       
+            }
+            .btn--enter-to-win {
+                font-family: 'Lato', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 34px;
+                text-transform: uppercase;
+                color: #FFFFFF;
+                padding: 14px 178.5px;   
+                background-color: #1A322F;           
+                margin-top: 94px; 
+                text-align: center;
+                @media screen and (max-width: 768px) {
+                    font-size: 20px;
+                    line-height: 34px;
+                    text-transform: capitalize;
+                    padding: 10px 87px; 
+                    margin-top: 32px;                    
+                }        
+            }
+        }
+    }
+{% endstylesheet %}
+    
+{% schema %}
+    {
+        "name": "Prizes - Giveaway",           
+        "class": "giveaway-prizes",
+        "settings": [ 
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title - Giveaway Feature",  
+                "default": "More About The Prizes"                
+            },
+            {
+                "type": "text",
+                "id": "title-product-left",
+                "label": "Title Product Left",
+                "default": "Sleep Capsules"
+            },    
+            {
+                "type": "image_picker",
+                "id": "image-product-left",
+                "label": "Image Product Left"
+            },
+            {
+                "type": "richtext",
+                "id": "copy-1-product-left",
+                "label": "Copy Product Left"
+            },
+            {
+                "type": "richtext",
+                "id": "copy-2-product-left",
+                "label": "Copy Product Left"
+            },
+            {
+                "type": "url",
+                "id": "url-product-left",
+                "label": "Url Product Left"
+            },
+            {
+                "type": "text",
+                "id": "label-product-left",
+                "label": "Label Products Left",
+                "default": "Shop Now"
+            },
+            {
+                "type": "text",
+                "id": "title-product-right",
+                "label": "Title Product right",
+                "default": "Relief Cream"
+            },    
+            {
+                "type": "image_picker",
+                "id": "image-product-right",
+                "label": "Image Product Right"
+            },
+            {
+                "type": "richtext",
+                "id": "copy-1-product-right",
+                "label": "Copy Product Right"
+            },
+            {
+                "type": "richtext",
+                "id": "copy-2-product-right",
+                "label": "Copy Product Right"
+            },
+            {
+                "type": "richtext",
+                "id": "copy-3-product-right",
+                "label": "Copy Product Right"   
+            },
+            {
+                "type": "url",
+                "id": "url-product-right",
+                "label": "Url Product Right"
+            },
+            {
+                "type": "text",
+                "id": "label-product-right",
+                "label": "Label Products Right",
+                "default": "Shop Now"
+            },
+            {
+                "type": "url",
+                "id": "url-main-cta",
+                "label": "Url Main CTA"
+            },
+            {
+                "type": "text",
+                "id": "label-main-cta",
+                "label": "Label Main CTA",
+                "default": "Enter To Win"
+            }
+        ]
+    }
+{% endschema %}

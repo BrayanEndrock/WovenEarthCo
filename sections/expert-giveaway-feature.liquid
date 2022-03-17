@@ -1,0 +1,166 @@
+<div class="giveaway-expert-container">   
+    <h2 class="title-mobile text-center large--hide">{{ section.settings.title }}</h2>      
+    <div class="wrapper">      
+        <div class="grid expert-content-wrapper">  
+            <div class="grid__item large--one-half">
+                {% assign img_url = section.settings.expert-image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                <img class="lazyload"
+                    src="{{ section.settings.expert-image | img_url: '520x704' }}"    
+                    data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                    data-aspectratio="{{ section.settings.expert-image }}"  
+                    data-sizes="auto"
+                    alt="Expert Photography"            
+                > 
+            </div>
+            <div class="grid__item large--one-half expert-content-box medium-down--text-center">      
+                <h2>{{ section.settings.title }}</h2>
+                <div class="quote">{{ section.settings.expert-quote }}</div>   
+                <h5>{{ section.settings.expert-name }}</h5>      
+                <a href="#klaviyoForm" class="btn btn--expert medium-down--hide">{{ section.settings.cta-label }}</a>          
+                <a href="#klaviyoFormMobile" class="btn btn--expert large--hide">{{ section.settings.cta-label }}</a>    
+            </div>  
+        </div>
+    </div>
+</div>
+
+{% stylesheet 'scss' %}
+    .giveaway-expert {
+        .giveaway-expert-container {       
+            padding: 80px 0; 
+            @media screen and (max-width: 768px) {
+                padding: 55px 0 64px;         
+            }
+            .title-mobile {   
+                max-width: 258px;      
+                font-style: normal;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 32px;
+                text-align: center;
+                text-transform: uppercase;
+                color: #1A322F;
+                padding: 0;             
+                margin: 0 auto 25px !important;
+            }
+            .expert-content-wrapper {
+                img {
+                    display: block;
+                    margin: 0;                 
+                }
+                .expert-content-box {
+                    padding-top: 127px; 
+                    @media screen and (max-width: 768px) {
+                        padding-top: 31px;             
+                    }        
+                    h2 {
+                        max-width: 569px;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 56px;
+                        line-height: 72px;
+                        color: #1A322F;
+                        padding: 0;        
+                        margin: 0 0 27px !important;
+                        @media screen and (max-width: 768px) {
+                            display: none;          
+                        }
+                    }
+                    .quote {
+                        margin-bottom: 24px;
+                        @media screen and (max-width: 768px) {
+                            margin-bottom: 4px;
+                        }
+                        p {
+                            max-width: 525px;              
+                            font-family: 'Roboto', sans-serif;
+                            font-style: normal;
+                            font-weight: normal;    
+                            font-size: 18px;                   
+                            line-height: 32px;
+                            color: #1A322F;            
+                            margin-bottom: 0 !important; 
+                            @media screen and (max-width: 768px) {
+                                max-width: 254px;    
+                                font-size: 14px;
+                                line-height: 24px;
+                                text-align: center;
+                                margin: 0 auto;
+                            }         
+                        }   
+                    }
+                    h5 {
+                        font-family: 'Roboto', sans-serif;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 18px;
+                        line-height: 32px;
+                        color: #1A322F;
+                        margin: 0 0 30px !important;     
+                        text-transform: capitalize;
+                        @media screen and (max-width: 768px) {
+                            font-size: 14px;
+                            text-align: center;
+                            margin: 0 auto 29px;    
+                        }                    
+                    }
+                    a {
+                        padding: 16px 32px;
+                        background-color: #1A322F;
+                        color: #fff;
+                        font-family: 'Lato', sans-serif;     
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 20px;
+                        line-height: 34px;
+                        text-transform: uppercase;
+                        @media screen and (max-width: 768px) {
+                            padding: 10px 32px;          
+                        }
+                    }    
+                }
+            } 
+        }
+    }
+{% endstylesheet %}
+
+{% schema %}
+    {
+        "name": "Expert - Giveaway Landing",
+        "class": "giveaway-expert",
+        "settings": [  
+            {
+                "type": "image_picker",     
+                "id": "expert-image",
+                "label": "Expert Image - Giveaway Feature"   
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title - Giveaway Feature",  
+                "default": "What Health Professionals Say"
+            },
+            {
+                "type": "richtext",
+                "id": "expert-quote",
+                "label": "Expert Quote - Giveaway Feature"
+            },
+            {
+                "type": "text",
+                "id": "expert-name",
+                "label": "Expert Name - Giveaway Feature",
+                "default": "— Martha Hackett, MD | Mentor, Ohio"
+            },
+            {
+                "type": "url",
+                "id": "cta-url",
+                "label": "Url CTA - Giveaway Feature"
+            },
+            {
+                "type": "text",
+                "id": "cta-label",
+                "label": "Label CTA - Giveaway Feature",
+                "default": "Enter to Win"      
+            }
+        ] 
+    }
+{% endschema %}

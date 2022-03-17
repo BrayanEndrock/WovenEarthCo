@@ -1,0 +1,151 @@
+<div class="recommended-by-container text-center"> 
+    <h3>{{ section.settings.title }}</h3>     
+    <div class="wrapper">
+        <div class="grid recommended-by-slider">     
+            {% for block in section.blocks %}     
+                <div class="grid__item large--one-third medium-down--one-whole recommended-by-block">            
+                    <img  class="lazyload" src="{{ block.settings.logo | img_url: '264x40' }}" srcset="{{ block.settings.logo | img_url: '528x80'}}" alt="Logo">
+                    <div class="copy">{{ block.settings.copy }}</div>     
+                </div>   
+            {% endfor %}
+        </div>
+    </div>
+</div>   
+
+{% javascript %}
+    $(document).ready(function() {
+        $('.recommended-by-slider').slick({
+            dots: true,           
+            arrows: false,      
+            infinite: false,    
+            responsive: [   
+                {
+                    breakpoint: 9999,  
+                    settings: "unslick"     
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,                                                                   
+                        slidesToScroll: 1,                         
+                        adaptiveHeight: true                                                        
+                    }         
+                }
+            ]             
+        });    
+    });          
+{% endjavascript %}
+
+{% stylesheet 'scss' %}
+    .home-feature-recommended-by {
+        padding: 33px 0;   
+        margin-top: 0 !important;
+        background-color: #FAF1DD;  
+        @media screen and (max-width: 768px) {
+            padding: 35px 0 40px;        
+        }   
+        .recommended-by-container {
+            h3 {
+                font-family: "Abril Fatface", serif;     
+                font-style: normal;
+                font-weight: normal;
+                font-size: 28px;
+                line-height: 24px;
+                text-align: center;
+                text-transform: capitalize;
+                color: #1F322F;
+                margin: 0 auto 43px;     
+                letter-spacing: normal; 
+                @media screen and (max-width: 768px) {
+                    font-size: 24px; 
+                    margin-bottom: 37px;              
+                }      
+            }
+            .recommended-by-block {
+                img {
+                    display: block;
+                    margin: 0 auto;    
+                }     
+                .copy {
+                    max-width: 364px;     
+                    font-family: 'Roboto';
+                    font-style: italic;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 24px;
+                    text-align: center;
+                    color: #195850;
+                    margin: 23px auto 0; 
+                    @media screen and (max-width: 768px) {   
+                        max-width: 224px;
+                        font-size: 14px;
+                        margin-top: 15px;
+                    }              
+                }
+                @media screen and (min-width: 768px) {
+                    &:first-of-type {
+                        margin-top: 18px;       
+                    }    
+                }   
+            }
+            .slick-dots {
+                bottom: unset;  
+                li {
+                    button {
+                        &:before {
+                            background-color: transparent;
+                            border-color: #195850;     
+                        }
+                    }
+                }
+                .slick-active {
+                    button {
+                        &:before {
+                            background-color: #195850;       
+                            border-color: #195850;     
+                        }
+                    }
+                }     
+            }     
+        }   
+    }
+{% endstylesheet %}
+
+{% schema %}    
+    {
+        "name": "Recommended By",             
+        "class": "home-feature-recommended-by",    
+        "presets": [
+            {
+                "category": "Home",   
+                "name": "Home Feature - Recommended By"   
+            }     
+        ],
+        "settings": [ 
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "Recommended By"   
+            }       
+        ],
+        "blocks": [         
+            {
+                "type": "Recommended-By",
+                "name": "Recommended By Block", 
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "logo",
+                        "label": "Logo"
+                    },    
+                    {
+                        "type": "richtext",    
+                        "id": "copy",
+                        "label": "Copy"
+                    }
+                ]
+            }    
+        ]      
+    }
+{% endschema %}

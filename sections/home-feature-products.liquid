@@ -1,0 +1,142 @@
+<div class="home-featured-products--wrapper">
+    <div class="wrapper">
+        {% if section.settings.title != blank %}
+            <h3 class="text-center">{{section.settings.title}}</h3>
+            <hr class="hr--small">
+        {% endif %}  
+        {% if section.settings.description != blank %}
+            {{section.settings.description}}
+        {% endif %}
+        <div class="grid-uniform featured-products-carousel">
+            {%for block in section.blocks%}
+                {%- assign product = all_products[block.settings.product_id] -%}
+                <div class="grid__item grid-product medium--one-half large--one-third">
+                    {%if block.settings.product_image != blank%}
+                        <figure class="no-shadow">
+                            <img data-srcset="{{block.settings.product_image | img_url: 'x346'}} 1x, {{block.settings.product_image | img_url: '692x'}} 2x" class="lazyload">
+                        </figure>
+                    {%else%}
+                        <figure class="no-shadow">
+                            <img data-srcset="{{ product.featured_image | img_url: 'x346'}} 1x, {{product.featured_image | img_url: '692x'}} 2x" class="lazyload">
+                        </figure>
+                    {%endif%}    
+                    <h4>
+                        {{ block.settings.product_title }}         
+                        <span class="product-price">
+                            {{ block.settings.product_price }}   
+                        </span>   
+                    </h4>    
+                    <div class="reviews-badge">
+                        {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false, product: product %}
+                    </div>
+                    <a href="{{ block.settings.product_url }}" class="btn featured-btn">Learn More</a>   
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+<!-- /.home-featured-products--wrapper -->
+
+
+{% javascript %}
+    $(document).ready(function(){
+        const productsCarousel = $('.featured-products-carousel');
+        let getSliderSettings = () => {
+            return {
+                infinite: true,
+                dots: false,
+                arrows: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                responsive: [
+                {
+                    breakpoint: 9999,
+                    settings: "unslick"
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        infinite: true,
+                        dots: false,
+                        arrows: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                }
+                ]
+            }
+        }
+        productsCarousel.slick(getSliderSettings());
+    });
+{% endjavascript %}
+
+{% stylesheet 'scss' %}
+    .home-featured-products {
+        .home-featured-products--wrapper {
+            h3 {           
+                font-weight: lighter;
+                letter-spacing: 0;
+            }              
+        }
+    }
+{% endstylesheet %}
+
+{% schema %}
+    {
+        "name":"Home products",
+        "class":"home-featured-products",
+        "max_blocks": 3,
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+                "type": "richtext",
+                "id": "description",
+                "label": "Description"
+            } 
+        ],
+        "blocks":[
+            {
+                "type": "product",
+                "name": "Product",
+                "settings":[
+                    {
+                        "type": "product",
+                        "id": "product_id",
+                        "label": "Product"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "product_image",
+                        "label": "Product Image",
+                        "info": "If left blank will default to product image"
+                    },
+                    {
+                        "type": "url",
+                        "id": "product_url",
+                        "label": "Product Url"   
+                    },
+                    {
+                        "type": "text",
+                        "id": "product_title",
+                        "label": "Product Title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "product_price",
+                        "label": "Product Price"  
+                    }
+                ]
+            }
+        ],   
+        "presets":[
+            {
+                "name":"Home Featured Prods",
+                "category": "Woven Earth"
+            }
+        ] 
+    }
+{% endschema %}

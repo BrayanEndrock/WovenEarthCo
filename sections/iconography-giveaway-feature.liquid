@@ -1,0 +1,85 @@
+<div class="giveaway-iconography-container">
+    <div class="wrapper">
+        <div class="grid icons-wrapper icons-slider"> 
+            {% for block in section.blocks %}
+                {% if block.type == 'icon'%}
+                    <div class="grid__item large--one-third">        
+                        {% assign img_url = block.settings.icon | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                        <img class="lazyload"
+                            src="{{ block.settings.icon | img_url: '264x40' }}"    
+                            data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                            data-aspectratio="{{ block.settings.icon.aspect_ratio }}"  
+                            data-sizes="auto"
+                            alt="Icon"      
+                        >     
+                    </div>        
+                {% endif %}        
+            {% endfor %}  
+        </div>
+    </div>
+</div>     
+
+{% stylesheet 'scss' %}
+    .giveaway-iconography {  
+        background-color: #F4F5F7; 
+        @media screen and (max-width: 768px) { 
+            margin-top: -20px;          
+        }                      
+        .giveaway-iconography-container {
+            padding: 76px 0 72px;
+            background-color: #F4F5F7; 
+            @media screen and (max-width: 768px) {
+                padding: 44px 0 40px;
+            }
+            .icons-wrapper {
+                display: flex;
+                align-items: center;
+                @media screen and (max-width: 768px) {
+                    padding-top: 79px;        
+                }
+                img {
+                    display: block;
+                    margin: 0 auto;    
+                }
+                .slick-dots {
+                    bottom: unset;
+                    margin-top: 30%; 
+                    .slick-active {
+                        button {
+                            &:before {
+                                background-color: #195850;           
+                            }
+                        }
+                    } 
+                    li {
+                        button {    
+                            &:before {
+                                border-color: #195850;
+                            }
+                        }
+                    }     
+                }
+            }    
+        }
+    }
+{% endstylesheet %}
+
+{% schema %}
+    {
+        "name": "Icons - Giveaway Landing",
+        "class": "giveaway-iconography",
+        "blocks": [
+            {
+                "type": "icon",
+                "name": "Icons",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "icon",      
+                        "label": "Icon"
+                    }
+                ]     
+            }  
+        ]
+    }
+{% endschema %}

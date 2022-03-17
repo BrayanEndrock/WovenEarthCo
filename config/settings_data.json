@@ -1,0 +1,1285 @@
+{
+  "current": {
+    "color_complementary": "#abe2f7",
+    "type_header_family": "abril_fatface_n4",
+    "type_header_base_size": "34px",
+    "type_base_family": "roboto_n4",
+    "share_facebook": false,
+    "share_twitter": false,
+    "share_pinterest": false,
+    "favicon": "shopify:\/\/shop_images\/Favicon-01.png",
+    "checkout_accent_color": "#a26b25",
+    "checkout_button_color": "#000000",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/global-logo.png",
+          "logo_max_width": 180,
+          "header_color": "#000000",
+          "transparent_header_enable": true,
+          "transparent_header_color": "#ffffff",
+          "search": "modal",
+          "main_menu_link_list": "main-menu",
+          "drawer_bottom_link_list": "footer",
+          "drawer_search_enable": false,
+          "show_announcement": true,
+          "home_page_only": false,
+          "text": "Free Shipping + Free Samples on orders over $75",
+          "link": "",
+          "color_bg": "#fffb94",
+          "color_text": "#1f322f"
+        }
+      },
+      "slideshow": {
+        "type": "slideshow",
+        "disabled": true,
+        "blocks": {
+          "slideshow-0": {
+            "type": "slide",
+            "settings": {
+              "image_position": "center center",
+              "image_overlay": true,
+              "image_overlay_opacity": 25,
+              "text_alignment": "center",
+              "slide_heading": "Hero Banner",
+              "slide_subheading": "An introductory",
+              "button_label": "Shop now",
+              "slide_text_color": "#ffffff",
+              "slide_button_label_color": "#ffffff",
+              "slide_button_background_color": "#1f2021"
+            }
+          },
+          "slideshow-1": {
+            "type": "slide",
+            "settings": {
+              "image_position": "center center",
+              "image_overlay": true,
+              "image_overlay_opacity": 25,
+              "text_alignment": "center",
+              "slide_heading": "Hero Banner",
+              "slide_subheading": "An introductory",
+              "button_label": "Shop now",
+              "slide_text_color": "#ffffff",
+              "slide_button_label_color": "#ffffff",
+              "slide_button_background_color": "#1f2021"
+            }
+          }
+        },
+        "block_order": [
+          "slideshow-0",
+          "slideshow-1"
+        ],
+        "settings": {
+          "home_hero_height": "full",
+          "hero_home_auto": false,
+          "home_hero_auto_speed": 5
+        }
+      },
+      "featured-content": {
+        "type": "featured-content",
+        "settings": {
+          "home_page_full_width": false,
+          "section_title": "",
+          "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+          "text_size": "large"
+        }
+      },
+      "featured-collections": {
+        "type": "featured-collections",
+        "blocks": {
+          "featured-collections-0": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "featured-collections-1": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "featured-collections-2": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "featured-collections-3": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "featured-collections-4": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          }
+        },
+        "block_order": [
+          "featured-collections-0",
+          "featured-collections-1",
+          "featured-collections-2",
+          "featured-collections-3",
+          "featured-collections-4"
+        ],
+        "settings": {
+          "title": "Collection list"
+        }
+      },
+      "featured-products": {
+        "type": "featured-products",
+        "settings": {
+          "title": "Featured collection",
+          "home_featured_products": "",
+          "collection_products_grid": "grid"
+        }
+      },
+      "featured-product": {
+        "type": "featured-product",
+        "disabled": true,
+        "settings": {
+          "featured_product": "",
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "enable_payment_button": true,
+          "show_share_buttons": true,
+          "enable_video_looping": false
+        }
+      },
+      "newsletter": {
+        "type": "newsletter",
+        "disabled": true,
+        "settings": {
+          "heading": "Subscribe to our newsletter",
+          "subheading": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "653564ee-9441-4e69-a6bd-b77c0ac1afd8": {
+            "type": "links",
+            "settings": {
+              "menu": "footer"
+            }
+          },
+          "8eac1195-b8ca-433c-b05a-a5900cbeced1": {
+            "type": "links",
+            "settings": {
+              "menu": "policies"
+            }
+          }
+        },
+        "block_order": [
+          "653564ee-9441-4e69-a6bd-b77c0ac1afd8",
+          "8eac1195-b8ca-433c-b05a-a5900cbeced1"
+        ],
+        "settings": {
+          "newsletter_heading": "Join the community",
+          "newsletter_label": "Sign up for our email list",
+          "hemp_compliance": "<p>* These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease. These products are not for use by or sale by persons under the age of 18.<\/p><p>PO Box 3280<br\/>Roxboro, NC 27573<br\/>USA<br\/><a href=\"mailto:support@wovenearth.com\" target=\"_blank\">support@wovenearth.com<\/a><br\/><\/p>",
+          "show_payment_icons": true,
+          "show_locale_selector": true,
+          "show_currency_selector": true
+        }
+      },
+      "16215310894b8e90ca": {
+        "type": "featured-main-banner",
+        "disabled": true,
+        "settings": {
+          "hero_layout": "simple",
+          "banner_image": "shopify:\/\/shop_images\/hero-background.jpg",
+          "product_image": "shopify:\/\/shop_images\/relief_cream_hero.png",
+          "title": "Whole plant power.<br> Whole body benefits.",
+          "subheading": "",
+          "button_label": "Learn More",
+          "button_link": "https:\/\/wovenearth.com\/collections\/woven-earth"
+        }
+      },
+      "162154277918cc0000": {
+        "type": "home-feature-products",
+        "disabled": true,
+        "blocks": {
+          "3830cd67-fe6a-4b35-b70a-ca782e73f97d": {
+            "type": "product",
+            "settings": {
+              "product_id": "",
+              "product_image": "shopify:\/\/shop_images\/cap1_a0a331eb-dd09-452e-a79e-106906def0de.png",
+              "product_url": "https:\/\/wovenearth.com\/products\/hemp-oil-capsules-1",
+              "product_title": "Daily Full Spectrum Hemp",
+              "product_price": "$49"
+            }
+          },
+          "34191afa-09a1-4a2e-817b-a0495327d1fc": {
+            "type": "product",
+            "settings": {
+              "product_id": "relief-full-spectrum-hemp",
+              "product_image": "shopify:\/\/shop_images\/crem_1.png",
+              "product_url": "shopify:\/\/products\/relief-full-spectrum-hemp",
+              "product_title": "Relief Full Spectrum Hemp",
+              "product_price": "$39"
+            }
+          },
+          "6aeaccab-4d5e-432c-83b6-89d1e9d9da89": {
+            "type": "product",
+            "settings": {
+              "product_id": "",
+              "product_image": "shopify:\/\/shop_images\/cap2.png",
+              "product_url": "https:\/\/wovenearth.com\/products\/sleep-capsules-1",
+              "product_title": "Sleep Full Spectrum Hemp",
+              "product_price": "$49"
+            }
+          }
+        },
+        "block_order": [
+          "3830cd67-fe6a-4b35-b70a-ca782e73f97d",
+          "34191afa-09a1-4a2e-817b-a0495327d1fc",
+          "6aeaccab-4d5e-432c-83b6-89d1e9d9da89"
+        ],
+        "settings": {
+          "title": "Best Sellers",
+          "description": ""
+        }
+      },
+      "162154641708770917": {
+        "type": "feaured-image-list",
+        "blocks": {
+          "faa3bc9d-2d89-429e-af0f-3173b7796132": {
+            "type": "image",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/home-image-whole-plant-power.png",
+              "title": "Whole plant power",
+              "legend": "<p>Hand-pressed to preserve maximum phytonutrients.<\/p>"
+            }
+          },
+          "65142a20-0321-49f2-9c51-601427c2aac2": {
+            "type": "image",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/home-image-trustworthy-transparency.png",
+              "title": "Trustworthy transparency",
+              "legend": "<p>Every product is third-party tested and traceable with a COA.<\/p>"
+            }
+          },
+          "6f1e5cbd-21f6-4cbb-8f3d-d9b61735e9d4": {
+            "type": "image",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/home-image-organic-ingredients.png",
+              "title": "Organic ingredients",
+              "legend": "<p>No chemical pesticides, <br\/>no harsh solvents, no nonsense.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "faa3bc9d-2d89-429e-af0f-3173b7796132",
+          "65142a20-0321-49f2-9c51-601427c2aac2",
+          "6f1e5cbd-21f6-4cbb-8f3d-d9b61735e9d4"
+        ],
+        "settings": {
+          "title": "",
+          "body": "",
+          "cta_label": "",
+          "cta_url": ""
+        }
+      },
+      "162154890643240704": {
+        "type": "home-testimonials",
+        "blocks": {
+          "24d16ffb-a12a-4d4d-83ec-1cebd75be593": {
+            "type": "testimonial",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/expert_15b2359a-dfa9-41d9-b2d9-0d8212443036.png",
+              "content": "<p>“When I started taking Woven Earth I was hopeful it would help the bone-on-bone arthritis in my knees. Now, the pain is basically gone. In addition to that, I’m sleeping better, my back is no longer stiff, and my sense of well-being is markedly improved.”<\/p>",
+              "author": "Martha Hackett, MD | Mentor, Ohio",
+              "max": 5,
+              "date": "12\/11\/2021"
+            }
+          },
+          "a77f291e-4f93-4e85-8305-26107ec88e78": {
+            "type": "testimonial",
+            "disabled": true,
+            "settings": {
+              "img": "shopify:\/\/shop_images\/testimonial-richard.jpg",
+              "content": "<p>“I recommend Woven Earth products to my patients because they are the highest quality, made from organically grown hemp, and offered at a reasonable price. Woven Earth provides full spectrum Hemp products that are more beneficial than products made with Hemp isolate.”<\/p>",
+              "author": "Richard Silver, MD | Silverlake  Wellness, Ohio",
+              "max": 5,
+              "date": "12\/11\/2021"
+            }
+          }
+        },
+        "block_order": [
+          "24d16ffb-a12a-4d4d-83ec-1cebd75be593",
+          "a77f291e-4f93-4e85-8305-26107ec88e78"
+        ],
+        "settings": {
+          "title": "What health professionals are saying.",
+          "cta_label": "Learn more",
+          "cta_url": "https:\/\/wovenearth.com\/pages\/about-us"
+        }
+      },
+      "1621605841b14fae88": {
+        "type": "featured-row",
+        "settings": {
+          "theme": "dark",
+          "image": "shopify:\/\/shop_images\/the-woven-earth-difference.png",
+          "mobile_image": "shopify:\/\/shop_images\/featured-row-mobile.png",
+          "layout": "left",
+          "title": "The Woven Earth difference.",
+          "text": "",
+          "button_label": "Learn More",
+          "button_link": "shopify:\/\/products\/relief-full-spectrum-hemp",
+          "icon-1": "shopify:\/\/shop_images\/icon-1.png",
+          "icon-2": "shopify:\/\/shop_images\/icon-2.png"
+        }
+      },
+      "16216059101b410950": {
+        "type": "featured-row",
+        "settings": {
+          "theme": "blue",
+          "image": "shopify:\/\/shop_images\/image-banner.png",
+          "layout": "left",
+          "title": "Learn how the endocannabinoid <br> system and terpenes help you find relief.",
+          "text": "",
+          "button_label": "Learn More",
+          "button_link": "https:\/\/wovenearth.com\/pages\/about-us"
+        }
+      },
+      "16216059543f066b12": {
+        "type": "featured-row",
+        "disabled": true,
+        "settings": {
+          "theme": "light",
+          "image": "shopify:\/\/shop_images\/Daily_Pills_Rock_Base_1.png",
+          "layout": "background",
+          "title": "Free samples <br> with any order <br> over $75",
+          "text": "",
+          "button_label": "Learn More",
+          "button_link": "https:\/\/wovenearth.com\/collections\/woven-earth"
+        }
+      },
+      "1621606925aa7fce61": {
+        "type": "home-reviews",
+        "disabled": true,
+        "blocks": {
+          "4d34057d-a142-4ab1-b3b2-fed2b55e44b5": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>“I’ve been suffering with chronic pain since 1997…<br\/>It was a mind blower, a game changer.” <\/p>",
+              "author": "–Eric S., North Carolina"
+            }
+          },
+          "286a8021-570b-421a-8e40-13e3e768a770": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>I sleep almost all through the night now. I used to get up 4-5 times. I might get up once or twice now. It’s changed so many things. The more you use it the more you find out what it does for you. Its just amazing.<\/p>",
+              "author": "Eric S."
+            }
+          },
+          "fdcb65ac-01d6-4932-a112-fafc7b7968bc": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>I’ve had chronic back pain for probably over 2 years and I tell ya using this stuff I see a world of difference. I actually had almost 3 days with no pain which was rare<\/p>",
+              "author": "Al S."
+            }
+          },
+          "f74496bb-9ceb-4311-8e58-d798dd6b149c": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>I’ve got some knee problems after years of sports. I got two ACL reconstructions and arthritis in my left knee. I found these hemp products and the tincture really helped out actually. I was able to go back to an active lifestyle and I was able to play sports again.<\/p>",
+              "author": "George T."
+            }
+          },
+          "ee87977a-0602-4428-a05b-8c49801c02a1": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>“Reordering! — these have become an important part of my pre-bedtime routine.”<\/p>",
+              "author": "Ali T."
+            }
+          },
+          "a3196612-cdde-4487-9f32-df6f95e164dc": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>“Amazing for sleep! I’m hesitant about sleep aids – things like melatonin make me very groggy the next morning. Woven Earth capsules are wonderful – I easily fall asleep, stay asleep, and wake up on my own feeling refreshed!”<\/p>",
+              "author": "Jennifer K."
+            }
+          },
+          "fbcd43f9-611a-41e0-a8aa-4497da777755": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p> “The swelling in the shoulder, when I started taking the Woven Earth Hemp capsules I was really surprised by how the swelling came down.\"<\/p>",
+              "author": "Tom S."
+            }
+          },
+          "3a092d84-9ea3-4480-8dd4-e980bd6c9a9f": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>I feel like I heal so much faster now and I'm able to do my job and travel and not be tied up with pain\"<\/p>",
+              "author": "Ali M."
+            }
+          }
+        },
+        "block_order": [
+          "4d34057d-a142-4ab1-b3b2-fed2b55e44b5",
+          "286a8021-570b-421a-8e40-13e3e768a770",
+          "fdcb65ac-01d6-4932-a112-fafc7b7968bc",
+          "f74496bb-9ceb-4311-8e58-d798dd6b149c",
+          "ee87977a-0602-4428-a05b-8c49801c02a1",
+          "a3196612-cdde-4487-9f32-df6f95e164dc",
+          "fbcd43f9-611a-41e0-a8aa-4497da777755",
+          "3a092d84-9ea3-4480-8dd4-e980bd6c9a9f"
+        ],
+        "settings": {
+          "background": "#68c7ab",
+          "quotes-mark-left": "shopify:\/\/shop_images\/left-2x.png",
+          "quotes-mark-right": "shopify:\/\/shop_images\/right-2x.png",
+          "bg-review": "shopify:\/\/shop_images\/background-img.png"
+        }
+      },
+      "16216262746c354801": {
+        "type": "instafeed",
+        "blocks": {
+          "3168f4c3-e31f-45e9-8aa3-962a1027ec0d": {
+            "type": "image",
+            "settings": {
+              "imagePost": "shopify:\/\/shop_images\/post-ig_1.jpg",
+              "post_url": "https:\/\/www.instagram.com\/wovenearthwellness\/"
+            }
+          },
+          "2f8357cd-9b0b-4cea-8b77-a540ae15996a": {
+            "type": "image",
+            "settings": {
+              "imagePost": "shopify:\/\/shop_images\/post-ig_2.jpg",
+              "post_url": "https:\/\/www.instagram.com\/wovenearthwellness\/"
+            }
+          },
+          "25928281-f672-4e14-887f-6ec82800cfdd": {
+            "type": "image",
+            "settings": {
+              "imagePost": "shopify:\/\/shop_images\/post-ig_3.jpg",
+              "post_url": "https:\/\/www.instagram.com\/wovenearthwellness\/"
+            }
+          },
+          "ab35206a-144f-438c-9500-2bb6d3df64c1": {
+            "type": "image",
+            "settings": {
+              "imagePost": "shopify:\/\/shop_images\/post-ig_4.jpg",
+              "post_url": "https:\/\/www.instagram.com\/wovenearthwellness\/"
+            }
+          }
+        },
+        "block_order": [
+          "3168f4c3-e31f-45e9-8aa3-962a1027ec0d",
+          "2f8357cd-9b0b-4cea-8b77-a540ae15996a",
+          "25928281-f672-4e14-887f-6ec82800cfdd",
+          "ab35206a-144f-438c-9500-2bb6d3df64c1"
+        ],
+        "settings": {
+          "heading_font": "helvetica_n4",
+          "heading_size": 20,
+          "feed_width": 100,
+          "html_area": ""
+        }
+      },
+      "1621710167fd29616b": {
+        "type": "featured-content",
+        "settings": {
+          "home_page_full_width": true,
+          "section_title": "We’re quite social",
+          "text": "<p><strong>Follow along at @wovenearthwellness<\/strong><\/p>",
+          "text_size": "medium"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "show_collection_image": false,
+          "collection_sort_enable": false,
+          "collection_tags_enable": false,
+          "collection_products_grid": "collage",
+          "product_vendor_enable": false
+        }
+      },
+      "collection-advanced-template": {
+        "type": "collection-advanced-template",
+        "blocks": {
+          "2dac627d-f28f-42fe-b4b3-5f4f95bc6b30": {
+            "type": "tabs",
+            "settings": {
+              "title": "Suggested Use",
+              "content": "<p>Adults to take approximately 20mg at bedtime, adding more day or night as desired. Shake well before use. Hold oil under tongue for 20-30 seconds, then swallow.\u0003<br\/>Available in two flavors: Natural, which is earthy and herbaceous, or Peppermint, which includes a refreshing hint of Peppermint oil.<br\/><br\/>100% organic ingredients, including hemp extract and MCT coconut oil. <br\/><br\/>Free of chemicals and solvents. <br\/><br\/>Blended with MCT oil for faster absorption.<br\/><br\/>It is recommended to consult with your physician or healthcare provider before using this product. Store in a cool, dry place away from light. Keep out of reach of children. <br\/><br\/>Will not produce a high or any kind of psychoactive effects.   <br\/><br\/>FDA has not evaluated this product for safety or efficacy.<\/p>"
+            }
+          },
+          "c4ceee31-b02f-413d-ba18-2e73c7ff58a2": {
+            "type": "tabs",
+            "settings": {
+              "title": "Testing and Traceability",
+              "content": "<p>Adults to take approximately 20mg at bedtime, adding more day or night as desired. Shake well before use. Hold oil under tongue for 20-30 seconds, then swallow.\u0003<br\/>Available in two flavors: Natural, which is earthy and herbaceous, or Peppermint, which includes a refreshing hint of Peppermint oil.<br\/><br\/>100% organic ingredients, including hemp extract and MCT coconut oil. <br\/><br\/>Free of chemicals and solvents. <br\/><br\/>Blended with MCT oil for faster absorption.<br\/><br\/>It is recommended to consult with your physician or healthcare provider before using this product. Store in a cool, dry place away from light. Keep out of reach of children. <br\/><br\/>Will not produce a high or any kind of psychoactive effects.   <br\/><br\/>FDA has not evaluated this product for safety or efficacy.<\/p>"
+            }
+          },
+          "4f3571ca-bbce-4162-9d90-6e79195fe9f2": {
+            "type": "tabs",
+            "settings": {
+              "title": "Ingredients",
+              "content": "<p>Adults to take approximately 20mg at bedtime, adding more day or night as desired. Shake well before use. Hold oil under tongue for 20-30 seconds, then swallow.\u0003<br\/>Available in two flavors: Natural, which is earthy and herbaceous, or Peppermint, which includes a refreshing hint of Peppermint oil.<br\/><br\/>100% organic ingredients, including hemp extract and MCT coconut oil. <br\/><br\/>Free of chemicals and solvents. <br\/><br\/>Blended with MCT oil for faster absorption.<br\/><br\/>It is recommended to consult with your physician or healthcare provider before using this product. Store in a cool, dry place away from light. Keep out of reach of children. <br\/><br\/>Will not produce a high or any kind of psychoactive effects.   <br\/><br\/>FDA has not evaluated this product for safety or efficacy.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "2dac627d-f28f-42fe-b4b3-5f4f95bc6b30",
+          "c4ceee31-b02f-413d-ba18-2e73c7ff58a2",
+          "4f3571ca-bbce-4162-9d90-6e79195fe9f2"
+        ],
+        "settings": {
+          "main_title": "About our hemp oil",
+          "background_color": "#faf1dd",
+          "background": "shopify:\/\/shop_images\/plp-background.png",
+          "show_collection_image": false,
+          "collection_sort_enable": false,
+          "collection_tags_enable": false,
+          "collection_products_grid": "grid",
+          "product_vendor_enable": false
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "blocks": {
+          "dcccd817-968f-4320-a754-702cc41596ff": {
+            "type": "tabs",
+            "settings": {
+              "title": "Suggested Use",
+              "content": "<p>Adults to take approximately 20mg at bedtime, adding more day or night as desired. Shake well before use. Hold oil under tongue for 20-30 seconds, then swallow.\u0003<br\/><br\/>100% organic ingredients, including hemp extract and MCT coconut oil. <br\/><br\/>Free of chemicals and solvents. <br\/><br\/>Blended with MCT oil for faster absorption.<br\/><br\/>It is recommended to consult with your physician or healthcare provider before using this product. Store in a cool, dry place away from light. Keep out of reach of children. <br\/><br\/>Will not produce a high or any kind of psychoactive effects.   <br\/><br\/>FDA has not evaluated this product for safety or efficacy.<\/p>"
+            }
+          },
+          "fc840124-530b-4fb1-ab15-4bdc38776e95": {
+            "type": "tabs",
+            "settings": {
+              "title": "Testing and Traceability",
+              "content": "<p>Adults to take approximately 20mg at bedtime, adding more day or night as desired. Shake well before use. Hold oil under tongue for 20-30 seconds, then swallow.\u0003<br\/>Available in two flavors: Natural, which is earthy and herbaceous, or Peppermint, which includes a refreshing hint of Peppermint oil.<br\/><br\/>100% organic ingredients, including hemp extract and MCT coconut oil. <br\/><br\/>Free of chemicals and solvents. <br\/><br\/>Blended with MCT oil for faster absorption.<br\/><br\/>It is recommended to consult with your physician or healthcare provider before using this product. Store in a cool, dry place away from light. Keep out of reach of children. <br\/><br\/>Will not produce a high or any kind of psychoactive effects.   <br\/><br\/>FDA has not evaluated this product for safety or efficacy.<\/p>"
+            }
+          },
+          "17e2dcc8-de10-4907-baa6-662d2e1fb364": {
+            "type": "tabs",
+            "settings": {
+              "title": "Ingredients",
+              "content": "<p>Adults to take approximately 20mg at bedtime, adding more day or night as desired. Shake well before use. Hold oil under tongue for 20-30 seconds, then swallow.\u0003<br\/>Available in two flavors: Natural, which is earthy and herbaceous, or Peppermint, which includes a refreshing hint of Peppermint oil.<br\/><br\/>100% organic ingredients, including hemp extract and MCT coconut oil. <br\/><br\/>Free of chemicals and solvents. <br\/><br\/>Blended with MCT oil for faster absorption.<br\/><br\/>It is recommended to consult with your physician or healthcare provider before using this product. Store in a cool, dry place away from light. Keep out of reach of children. <br\/><br\/>Will not produce a high or any kind of psychoactive effects.   <br\/><br\/>FDA has not evaluated this product for safety or efficacy.<\/p>"
+            }
+          },
+          "d319b1b7-d542-4ec4-a38f-aab0c74fd209": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/Frame.png"
+            }
+          },
+          "e21b5abb-fdba-4b72-b219-d1c683d8154c": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/Frame_1.png"
+            }
+          },
+          "4d381534-e9d9-44c4-a903-bb4f01ed3477": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/Frame_2.png"
+            }
+          },
+          "168d6fad-536e-42e5-a293-c546c51894dd": {
+            "type": "recommended-by",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/well-good-logo.png",
+              "copy": "<p>“Woven Earth is known for its science-backed therapeutic line of hemp-based products, like topicals, supplements, and tinctures.\"<\/p>"
+            }
+          },
+          "92aac684-c8c2-4602-9fa1-1891228a471d": {
+            "type": "recommended-by",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/health-logo.png",
+              "copy": "<p>“Woven Earth uses a gentle lipid extraction process to translate the full power of organic hemp into a simple-to-dose vegan capsule”<\/p>"
+            }
+          },
+          "25b02c29-0204-46dc-b82f-257c2e61bc2d": {
+            "type": "recommended-by",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/thrillist-logo.png",
+              "copy": "<p>“You can rest assured you're getting a good product as the Woven Earth team is made up of scientists, doctors, professionals, and care-givers committed to creating the highest quality hemp products.”<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "dcccd817-968f-4320-a754-702cc41596ff",
+          "fc840124-530b-4fb1-ab15-4bdc38776e95",
+          "17e2dcc8-de10-4907-baa6-662d2e1fb364",
+          "d319b1b7-d542-4ec4-a38f-aab0c74fd209",
+          "e21b5abb-fdba-4b72-b219-d1c683d8154c",
+          "4d381534-e9d9-44c4-a903-bb4f01ed3477",
+          "168d6fad-536e-42e5-a293-c546c51894dd",
+          "92aac684-c8c2-4602-9fa1-1891228a471d",
+          "25b02c29-0204-46dc-b82f-257c2e61bc2d"
+        ],
+        "settings": {
+          "product_vendor_enable": false,
+          "social_sharing_products": false,
+          "quantity_enabled": true,
+          "product_selector": "radio",
+          "enable_payment_button": false,
+          "add_to_cart_button_size": "small",
+          "media_layout": "thumbnails",
+          "enable_image_zoom": true,
+          "enable_video_looping": false,
+          "main_title": "About our hemp oil",
+          "background_color": "#f4f5f7",
+          "background": "shopify:\/\/shop_images\/Mask_Group.png",
+          "recommended-by-title": "Recommended By"
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "Additional products"
+        }
+      },
+      "featured-main-banner": {
+        "type": "featured-main-banner",
+        "settings": {
+          "hero_layout": "heading",
+          "title": "Image slide",
+          "subheading": "Tell your brand's story through images",
+          "button_label": ""
+        }
+      },
+      "password-header": {
+        "type": "password-header",
+        "settings": {
+          "logo_max_width": "200"
+        }
+      },
+      "password-content": {
+        "type": "password-content",
+        "settings": {
+          "title": "Opening Soon",
+          "newsletter_enable": true,
+          "newsletter_form_heading": "Be the first to know when we launch.",
+          "newsletter_form_subheading": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>",
+          "newsletter_placeholder": "Email address",
+          "newsletter_button_text": "Submit",
+          "show_share_buttons": true,
+          "social_message": "Spread the word"
+        }
+      },
+      "1629826945790d558e": {
+        "type": "home-feature-recommended-by",
+        "blocks": {
+          "64cbac71-4d66-4200-b712-7cbfab286caa": {
+            "type": "Recommended-By",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/well-good-logo.png",
+              "copy": "<p>“Woven Earth is known for its science-backed therapeutic line of hemp-based products, like topicals, supplements, and tinctures.\"<\/p>"
+            }
+          },
+          "53696b29-3c0b-42d2-93f4-e7c738f5352b": {
+            "type": "Recommended-By",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/health-logo.png",
+              "copy": "<p>“Woven Earth uses a gentle lipid extraction process to translate the full power of organic hemp into a simple-to-dose vegan capsule”<\/p>"
+            }
+          },
+          "69df944f-0165-4ba3-9477-661c646250c8": {
+            "type": "Recommended-By",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/thrillist-logo.png",
+              "copy": "<p>“You can rest assured you're getting a good product as the Woven Earth team is made up of scientists, doctors, professionals, and care-givers committed to creating the highest quality hemp products.”<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "64cbac71-4d66-4200-b712-7cbfab286caa",
+          "53696b29-3c0b-42d2-93f4-e7c738f5352b",
+          "69df944f-0165-4ba3-9477-661c646250c8"
+        ],
+        "settings": {
+          "title": "Recommended By"
+        }
+      },
+      "162983412745c2f9d5": {
+        "type": "home-feature-product",
+        "settings": {
+          "product-image": "shopify:\/\/shop_images\/product_image.png",
+          "product": "relief-full-spectrum-hemp",
+          "description": "<p>Woven Earth’s Relief Cream is specially formulated to tackle muscle aches and soreness. The slightly green color of our cream is the result of our gentle lipid extraction process, which preserves chlorophyll, flavonoids, terpenes and other naturally occurring vitamins and minerals. For best results, rub into the affected area twice daily. <\/p>",
+          "url": "shopify:\/\/products\/relief-full-spectrum-hemp",
+          "label": "Learn More"
+        }
+      },
+      "1629987306cf69bd7f": {
+        "type": "home-feature-reviews-slider",
+        "blocks": {
+          "849b3870-fac8-48d1-baad-d7e3af847abc": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>“I’ve been suffering with chronic pain since 1997…<br\/>It was a mind blower, a game changer.” <\/p>",
+              "author": "– Eric S., North Carolina"
+            }
+          },
+          "4f715401-315b-4060-8b76-317559b34e0e": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>I sleep almost all through the night now. I used to get up 4-5 times. I might get up once or twice now. It’s changed so many things. The more you use it the more you find out what it does for you. Its just amazing.<\/p>",
+              "author": "– Eric S."
+            }
+          },
+          "35e38563-d9ec-4b72-87cb-44d384fa5663": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>I’ve had chronic back pain for probably over 2 years and I tell ya using this stuff I see a world of difference. I actually had almost 3 days with no pain which was rare.<\/p>",
+              "author": "– Al S."
+            }
+          },
+          "cd409d86-a3eb-48f2-a0a0-f1bceee3c151": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>I’ve got some knee problems after years of sports. I got two ACL reconstructions and arthritis in my left knee. I found these products and the tincture really helped out actually. I was able to go back to an active lifestyle and I was able to play sports again.<\/p>",
+              "author": "– George T."
+            }
+          },
+          "807bb778-180c-458b-9a51-b694644d7a83": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>“Reordering! — these have become an important part of my pre-bedtime routine.”<\/p>",
+              "author": "– Ali T."
+            }
+          },
+          "f43eaf43-d904-4892-a4ca-0c5ed2cc29a2": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>“Amazing for sleep! I’m hesitant about sleep aids – things like melatonin make me very groggy the next morning. Woven Earth capsules are wonderful – I easily fall asleep, stay asleep, and wake up on my own feeling refreshed!”<\/p>",
+              "author": "– Jennifer K."
+            }
+          },
+          "7436e7e8-9cbc-4f86-a226-727f8ff796c5": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>“The swelling in the shoulder, when I started taking the Woven Earth Hemp capsules I was really surprised by how the swelling came down.\"<\/p>",
+              "author": "– Jennifer K."
+            }
+          },
+          "cc73a8ae-d329-4db4-bbcb-3efc7346a95c": {
+            "type": "review",
+            "settings": {
+              "rating": 5,
+              "title": "",
+              "content": "<p>I feel like I heal so much faster now and I'm able to do my job and travel and not be tied up with pain\"<\/p>",
+              "author": "– Ali M."
+            }
+          }
+        },
+        "block_order": [
+          "849b3870-fac8-48d1-baad-d7e3af847abc",
+          "4f715401-315b-4060-8b76-317559b34e0e",
+          "35e38563-d9ec-4b72-87cb-44d384fa5663",
+          "cd409d86-a3eb-48f2-a0a0-f1bceee3c151",
+          "807bb778-180c-458b-9a51-b694644d7a83",
+          "f43eaf43-d904-4892-a4ca-0c5ed2cc29a2",
+          "7436e7e8-9cbc-4f86-a226-727f8ff796c5",
+          "cc73a8ae-d329-4db4-bbcb-3efc7346a95c"
+        ],
+        "settings": {
+          "background": "#68c7ab",
+          "bg-review": "shopify:\/\/shop_images\/background-img.png"
+        }
+      },
+      "hero-giveaway-feature": {
+        "type": "hero-giveaway-feature",
+        "settings": {
+          "hero": "shopify:\/\/shop_images\/hero-desktop-giveaway.png",
+          "hero-mobile": "shopify:\/\/shop_images\/hero-mobile-giveaway.png",
+          "background-image": "shopify:\/\/shop_images\/background-hero.png"
+        }
+      },
+      "iconography-giveaway-feature": {
+        "type": "iconography-giveaway-feature",
+        "blocks": {
+          "42638ad8-ac94-4c9a-bb01-1c3d37e90eb5": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/well_good-logo.png"
+            }
+          },
+          "0832be19-425f-474a-a8d0-71c4b9ae1891": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/health-logo_5cf2a82b-e0b8-4862-8ad9-8ab3b5cbdd35.png"
+            }
+          },
+          "d6dd74f3-e145-4a2a-98fc-a0a4fdf3b15c": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/thrillist-logo_ac796aa5-bddb-4d35-b8d3-279c8f9f35eb.png"
+            }
+          }
+        },
+        "block_order": [
+          "42638ad8-ac94-4c9a-bb01-1c3d37e90eb5",
+          "0832be19-425f-474a-a8d0-71c4b9ae1891",
+          "d6dd74f3-e145-4a2a-98fc-a0a4fdf3b15c"
+        ],
+        "settings": {}
+      },
+      "difference-giveaway-feature": {
+        "type": "difference-giveaway-feature",
+        "settings": {
+          "title": "The Woven Earth Difference",
+          "copy-1": "<p>Enjoy full-body relief by entering to win our two best sellers: <strong>Daily Full Spectrum Hemp Capsules and Relief Cream<\/strong>. Our powerful full spectrum hemp is organically grown, and minimally processed.<\/p>",
+          "copy-2": "<p>That means you get not only hemp, but also impactful phytonutrients like terpenes, chlorophyll and flavonoids in every product. These together produce a synergistic effect for higher product efficacy.<\/p>",
+          "copy-3": "<p>Our <strong>Daily Full Spectrum Hemp Capsules<\/strong> will relieve your entire body of aches and pains, as well as help you get healthier, more satisfying sleep.<\/p>",
+          "copy-4": "<p><strong>The Relief Cream<\/strong> can be used in tandem for centralized easing of discomfort. It’s great for pain flare-ups that occur in the same location regularly, such as your back, wrists, or neck.<br\/>Enter to win this bundle, typically worth $88, now absolutely free!<\/p>",
+          "product-image": "shopify:\/\/shop_images\/relief-cream-image.png",
+          "product-title": "Enter to win this bundle, worth $88, now free!",
+          "subtitle": "We draw new winners every month!",
+          "url-cta": "",
+          "label-cta": "Enter now",
+          "leaf-1": "shopify:\/\/shop_images\/leaf-1.png",
+          "leaf-2": "shopify:\/\/shop_images\/leaf-2.png"
+        }
+      },
+      "info-blocks-giveaway-feature": {
+        "type": "info-blocks-giveaway-feature",
+        "blocks": {
+          "17cc0449-4295-4276-89bb-e5d89a69736e": {
+            "type": "info",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/icon-1_1b79554c-9921-44c3-a03c-7605f55ac8b1.png",
+              "title": "Whole Plant Power",
+              "copy": "<p>Hand-pressed hemp preserves maximum phytonutrients.<\/p>"
+            }
+          },
+          "828cf015-f15a-4639-b9e7-7a8999e06bf5": {
+            "type": "info",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/icon-2_8361cfa0-c30c-4a9e-828c-53541fbf8343.png",
+              "title": "Trustworthy Transparency",
+              "copy": "<p>Every product is<br\/>third-party tested and traceable with a COA.<\/p>"
+            }
+          },
+          "867b5e91-d815-47c2-b6ef-3f44aa147536": {
+            "type": "info",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/icon-3.png",
+              "title": "Organic Ingredients",
+              "copy": "<p>No chemical pesticides, no harsh solvents, no nonsense.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "17cc0449-4295-4276-89bb-e5d89a69736e",
+          "828cf015-f15a-4639-b9e7-7a8999e06bf5",
+          "867b5e91-d815-47c2-b6ef-3f44aa147536"
+        ],
+        "settings": {
+          "background-image": "shopify:\/\/shop_images\/Subtract.png",
+          "background-image-mobile": "shopify:\/\/shop_images\/subtract-mobile.png",
+          "background-leaf": "shopify:\/\/shop_images\/background-leaf.png"
+        }
+      },
+      "prizes-giveaway-feature": {
+        "type": "prizes-giveaway-feature",
+        "settings": {
+          "title": "More About The Prizes",
+          "title-product-left": "Daily Capsules",
+          "image-product-left": "shopify:\/\/shop_images\/product-left.png",
+          "copy-1-product-left": "<p>Experience whole-body relief from aches, inflammation, stress, and restlessness with our organic, hand-pressed Hemp Oil Capsules. Each capsule contains 20mg of full-spectrum hemp.<\/p>",
+          "copy-2-product-left": "<p>The deep green color of our oil is the result of our gentle lipid extraction process, which preserves chlorophyll, flavonoids, terpenes and other vitamins and minerals naturally found in hemp. Take one capsule nightly, and adjust as needed.<\/p>",
+          "url-product-left": "https:\/\/wovenearth.com\/products\/hemp-oil-capsules-1",
+          "label-product-left": "Shop Now",
+          "title-product-right": "Relief Cream",
+          "image-product-right": "shopify:\/\/shop_images\/relief-cream.png",
+          "copy-1-product-right": "<p>Woven Earth’s Relief Cream is specially formulated to tackle muscle aches and soreness.<\/p>",
+          "copy-2-product-right": "<p>See the indicator of our gentle lipid extraction process, the light green tint, which is proof of preservation of chlorophyll, flavonoids, terpenes and other naturally occurring vitamins and minerals.<\/p>",
+          "copy-3-product-right": "<p>For best results, gently rub into the affected area twice daily and experience local relief.<\/p>",
+          "url-product-right": "shopify:\/\/products\/relief-full-spectrum-hemp",
+          "label-product-right": "Shop Now",
+          "url-main-cta": "",
+          "label-main-cta": "Enter To Win"
+        }
+      },
+      "banner-giveaway-feature": {
+        "type": "banner-giveaway-feature",
+        "settings": {
+          "banner": "shopify:\/\/shop_images\/banner-giveaway-feature.png",
+          "banner-mobile": "shopify:\/\/shop_images\/banner-giveaway-feature-mobile.png",
+          "title": "Sleep Better Tonight, Sleep Better Every Night"
+        }
+      },
+      "customers-giveaway-feature": {
+        "type": "customers-giveaway-feature",
+        "blocks": {
+          "d91fecea-5ea6-422c-bdab-2d7c48369caa": {
+            "type": "review",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/icon-review-1.png",
+              "rating": 5,
+              "quote": "<p>I take a Daily Capsule every morning. This is my most active time of day, it helps take the edge off of any over-activity so I can get through the rest of the day.<\/p>",
+              "author": "— Dorothy K."
+            }
+          },
+          "a47b96a8-007e-4e03-b372-b3271e1af35a": {
+            "type": "review",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/icon-review-1.png",
+              "rating": 5,
+              "quote": "<p><strong>Inflammation<\/strong> I have used the Relief Cream for several weeks and think it is helping with the inflammation due to tendonitis in my ankle. I am walking longer without pain. Great, easy to use product.<\/p>",
+              "author": "— Anne U."
+            }
+          }
+        },
+        "block_order": [
+          "d91fecea-5ea6-422c-bdab-2d7c48369caa",
+          "a47b96a8-007e-4e03-b372-b3271e1af35a"
+        ],
+        "settings": {
+          "title": "What Customers Say"
+        }
+      },
+      "expert-giveaway-feature": {
+        "type": "expert-giveaway-feature",
+        "settings": {
+          "expert-image": "shopify:\/\/shop_images\/expert-image.png",
+          "title": "What Health Professionals Say",
+          "expert-quote": "<p>“When I started taking Woven Earth I was hopeful it would help the bone-on-bone arthritis in my knees. Now, the pain is basically gone. In addition to that, I’m sleeping better, my back is no longer stiff, and my sense of well-being is markedly improved.”<\/p>",
+          "expert-name": "— Martha Hackett, MD | Mentor, Ohio",
+          "cta-url": "",
+          "cta-label": "Enter to Win"
+        }
+      }
+    },
+    "content_for_index": [
+      "1621605841b14fae88",
+      "16215310894b8e90ca",
+      "1629826945790d558e",
+      "162983412745c2f9d5",
+      "162154641708770917",
+      "162154890643240704",
+      "1621606925aa7fce61",
+      "1629987306cf69bd7f",
+      "16216059101b410950",
+      "1621710167fd29616b",
+      "16216262746c354801",
+      "162154277918cc0000",
+      "16216059543f066b12"
+    ]
+  },
+  "presets": {
+    "Classic": {
+      "checkout_accent_color": "#a26b25",
+      "checkout_button_color": "#000000",
+      "checkout_error_color": "e32c2b",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "show_announcement": true
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "slide",
+              "settings": {}
+            },
+            "slideshow-1": {
+              "type": "slide",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {}
+        },
+        "featured-content": {
+          "type": "featured-content",
+          "settings": {
+            "section_title": "",
+            "text_size": "large"
+          }
+        },
+        "featured-collections": {
+          "type": "featured-collections",
+          "blocks": {
+            "featured-collections-0": {
+              "type": "collection",
+              "settings": {}
+            },
+            "featured-collections-1": {
+              "type": "collection",
+              "settings": {}
+            },
+            "featured-collections-2": {
+              "type": "collection",
+              "settings": {}
+            },
+            "featured-collections-3": {
+              "type": "collection",
+              "settings": {}
+            },
+            "featured-collections-4": {
+              "type": "collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "featured-collections-0",
+            "featured-collections-1",
+            "featured-collections-2",
+            "featured-collections-3",
+            "featured-collections-4"
+          ],
+          "settings": {}
+        },
+        "featured-products": {
+          "type": "featured-products",
+          "settings": {
+            "collection_products_grid": "grid"
+          }
+        },
+        "featured-product": {
+          "type": "featured-product",
+          "settings": {}
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "featured-content",
+        "featured-collections",
+        "featured-products",
+        "featured-product",
+        "newsletter"
+      ]
+    },
+    "Playful": {
+      "color_body_bg": "#ffffff",
+      "color_body_text": "#565656",
+      "color_borders": "#5dd2b4",
+      "color_button_text": "#ffffff",
+      "color_primary": "#7737BD",
+      "color_secondary": "#058677",
+      "color_product_background": "#fff4f6",
+      "color_sale_tag": "#e80970",
+      "color_input": "#f6f6f6",
+      "color_newsletter": "#bde9f2",
+      "color_drawer_background": "#360f5f",
+      "color_drawer_text": "#ffffff",
+      "color_drawer_border": "#50297a",
+      "color_drawer_button": "#7737BD",
+      "color_drawer_button_text": "#ffffff",
+      "color_headings": "#321863",
+      "type_header_family": "quicksand_n7",
+      "type_header_base_size": "38px",
+      "type_header_border_thickness": "1px",
+      "type_accent_family": "roboto_n7",
+      "type_accent_transform": true,
+      "type_accent_spacing": true,
+      "type_accent_subheadings": false,
+      "type_base_family": "helvetica_n4",
+      "type_base_size": "17px",
+      "type_base_italize_titles": false,
+      "cart_type": "drawer",
+      "cart_notes_enable": true,
+      "social_facebook_link": "",
+      "social_twitter_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_snapchat_link": "",
+      "social_google_plus_link": "",
+      "social_tumblr_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "social_fancy_link": "",
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fff4f6",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Roboto",
+      "checkout_accent_color": "#7737BD",
+      "checkout_button_color": "#7737BD",
+      "checkout_error_color": "#f01130",
+      "checkout_banner_background_color": "#fff",
+      "checkout_call_to_action_color": "#a26b25",
+      "checkout_use_header_image": false,
+      "collection_products_grid": "collage",
+      "customer_layout": "customer_area",
+      "favicon_enable": false,
+      "product_vendor_enable": false,
+      "social_sharing_style": "clean",
+      "sections": {
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "1495823280244": {
+              "type": "slide",
+              "settings": {
+                "slide_text_color": "#ffffff",
+                "slide_button_label_color": "#003B34",
+                "slide_button_background_color": "#84D1B2"
+              }
+            }
+          },
+          "block_order": [
+            "1495823280244"
+          ],
+          "settings": {
+            "hero_home_auto": false,
+            "home_hero_auto_speed": 5
+          }
+        },
+        "featured-products": {
+          "type": "featured-products",
+          "settings": {
+            "home_featured_products": "frontpage",
+            "collection_products_grid": "collage"
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {}
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo_max_width": 260,
+            "search": "modal",
+            "main_menu_link_list": "main-menu",
+            "show_announcement": false,
+            "color_bg": "#290c49",
+            "color_text": "#ffffff"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {}
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "collection_tags_enable": false,
+            "collection_products_grid": "grid",
+            "product_vendor_enable": false
+          }
+        },
+        "1494860348200": {
+          "type": "featured-row",
+          "settings": {
+            "layout": "right"
+          }
+        },
+        "1494894035034": {
+          "type": "featured-row",
+          "settings": {
+            "layout": "left"
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "product_vendor_enable": false,
+            "social_sharing_products": true,
+            "enable_image_zoom": false,
+            "enable_video_looping": false
+          }
+        },
+        "1496078102297": {
+          "type": "advanced-content",
+          "blocks": {
+            "1496078102297-0": {
+              "type": "html",
+              "settings": {
+                "code": "<div style=\"text-align:center;\">\n<h1 class=\"h1\">Use HTML to format your text so it can be easily read.<\/h1>This text can be used to share information about your brand with customers.<\/div>",
+                "width": "100%",
+                "alignment": "top-middle"
+              }
+            }
+          },
+          "block_order": [
+            "1496078102297-0"
+          ],
+          "settings": {}
+        },
+        "1496177901425": {
+          "type": "advanced-content",
+          "blocks": {
+            "1496177901425-0": {
+              "type": "html",
+              "settings": {
+                "code": "<div style=\"width:745px;text-align: center; margin: 0 auto;\">This text can be used to share information about your brand with customers.<\/div>",
+                "width": "100%",
+                "alignment": "top-middle"
+              }
+            }
+          },
+          "block_order": [
+            "1496177901425-0"
+          ],
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "1496177901425",
+        "featured-products",
+        "newsletter",
+        "1496078102297",
+        "1494860348200",
+        "1494894035034"
+      ]
+    }
+  }
+}

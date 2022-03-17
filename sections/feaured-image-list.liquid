@@ -1,0 +1,144 @@
+<div class="feature-image-list--wrapper">
+  <div class="wrapper">
+    {% if section.settings.title != blank %}
+      <h3>{{section.settings.title}}</h3>
+    {% endif %}
+
+    {% if section.settings.body != blank %}
+      {{section.settings.body}}
+    {% endif %}
+
+    <div class="grid-uniform featured-image-list-carousel">     
+      {%for block in section.blocks%}
+        <div class="grid__item medium--one-half large--one-third feature-image-list--item">
+          <figure>
+            <img data-srcset="{{block.settings.icon | img_url: 'x346'}} 1x, {{block.settings.icon | img_url: '692x'}} 2x" class="lazyload">
+          </figure>
+          <h2>{{ block.settings.title }}</h2>
+          <div class="legend">
+            {{ block.settings.legend }}
+          </div>
+        </div>
+      {%endfor%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet 'scss' %}
+  .feature-image-list {
+    .feature-image-list--wrapper {
+      @media screen and (max-width: 768px) {
+        padding: 32px 0 42px !important;       
+      }
+    }
+    .slick-dots {
+      bottom: unset;  
+      li {
+        button {
+          &:before {
+            background-color: transparent;               
+            border-color: #fff;             
+          }
+        }
+      }
+      .slick-active {
+        button {
+          &:before {
+            background-color: #AE9565 !important;               
+            border-color: #fff !important;         
+          }
+        }
+      }     
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  $(document).ready(function() {
+    const productsCarousel = $('.featured-image-list-carousel');
+    let getSliderSettings = () => {
+      return {
+        infinite: true,
+        dots: false,
+        arrows: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 9999,
+            settings: "unslick"
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              infinite: true,
+              dots: true,    
+              arrows: false,   
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            }
+          }
+        ]
+      }
+    }
+    productsCarousel.slick(getSliderSettings());
+  });
+{% endjavascript %}
+
+{% schema %}
+  {
+	"name": "Image list",
+	"class": "feature-image-list",
+	"settings": [
+	  {
+		"type": "text",
+		"id": "title",
+		"label": "Title"
+	  },
+	  {
+		"type": "richtext",
+		"id": "body",
+		"label": "Content"
+	  },
+	  {
+		"type": "text",
+		"id": "cta_label",
+		"label": "Button label"
+	  },
+	  {
+		  "type": "url",
+		  "id": "cta_url",
+		  "label": "Button link"
+	  }
+	],
+	"blocks": [
+	  {
+		"type": "image",
+		"name": "Image",
+		"settings": [
+		  {
+			"type": "image_picker",
+			"id": "icon",
+			"label": "Image"
+		  },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+		  {
+			"type": "richtext",
+			"id": "legend",
+			"label": "Legend"
+		  }
+		]
+	  }
+	],
+	"presets": [
+	  {
+		"category": "Image",
+		"name": "Image List"
+	  }
+	]
+  }
+{% endschema %}

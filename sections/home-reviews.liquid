@@ -1,0 +1,131 @@
+{%- comment -%}
+    <img class="lazyload quotes-mark-left" src="{{ section.settings.quotes-mark-left | img_url: '73x56' }}" alt="Quotes Mark Left" srcset="{{ section.settings.quotes-mark-left | img_url: '146x112', scale: 2 }} 2x">
+    <img class="lazyload quotes-mark-right" src="{{ section.settings.quotes-mark-right | img_url: '73x56' }}" alt="Quotes Mark Right" srcset="{{ section.settings.quotes-mark-right | img_url: '146x112', scale: 2 }} 2x">
+{%- endcomment -%}
+<div class="wrapper">
+    <div class="grid review-carousel">      
+        {%- for block in section.blocks -%}
+            <div class="grid__item large--one-quarter review"> 
+                <div class="review-stars">
+                    {% for i in (1..block.settings.rating) %}
+                        <img data-src="{{'ico-star.png' | asset_url }}" class="lazyload">
+                    {%endfor%}
+                </div>
+                {% unless block.settings.title == blank%}
+                    <h4>{{block.settings.title}}</h4>
+                {% endunless %}
+                {% unless block.settings.content == blank%}
+                    {{block.settings.content}}
+                {% endunless %}    
+                <h5 class="author">{{block.settings.author}}</h5>
+            </div>
+        {%- endfor -%}       
+    </div>
+</div>
+
+<style>
+    .home-reviews {
+      background-color: {{section.settings.background}};
+    }
+    .review {   
+        background-image: url({{ section.settings.bg-review | img_url: 'master' }});    
+        background-size: contain;
+        background-repeat: no-repeat;         
+        height: auto;
+        background-position: bottom right;   
+    }
+</style>  
+
+{% schema %}
+{
+   "name":"Home Reviews",
+   "class":"home-reviews",
+   "max_blocks": 12,
+   "settings":[
+        {
+          "type": "color",
+          "id": "background",
+          "label": "Background Color",
+          "default": "#ffffff"
+        },
+        {
+            "type": "image_picker",
+            "id": "quotes-mark-left",
+            "label": "Quotes Mark Left"
+        },      
+        {
+            "type": "image_picker",
+            "id": "quotes-mark-right",
+            "label": "Quotes Mark Right"
+        },
+        {
+            "type": "image_picker",
+            "id": "bg-review",
+            "label": "Background Review"   
+        }
+   ],
+   "blocks":[
+       {
+           "type": "review",
+           "name": "Review",
+           "settings":[
+                {
+                    "type": "range",
+                    "id": "rating",
+                    "min": 1,
+                    "max": 5,
+                    "step": 1,
+                    "unit": "S",
+                    "label": "Rating",
+                    "default": 5
+                },
+               {
+                   "type": "text",
+                   "id": "title",
+                   "label": "Title"
+               },
+               {
+                   "type": "richtext",
+                   "id": "content",
+                   "label": "Content"
+               },
+               {
+                   "type": "text",
+                   "id": "author",
+                   "label": "Author"
+               }
+           ]
+        }
+    ],   
+   "presets":[
+      {
+         "name":"Home reviews",
+         "category": "Woven Earth"
+      }
+   ]
+}
+{% endschema %}
+
+{% javascript %}
+    $(document).ready(function(){
+        const reviewCarouel = $('');              
+        let getSliderSettings = () => {
+            return {
+                infinite: false,   
+                dots: true,
+                arrows: false,
+                slidesToShow: 3,
+                slidesToScroll: 1,                  
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            arrows: false
+                        }
+                    }    
+                ]   
+            }
+        }
+        reviewCarouel.slick(getSliderSettings());
+    });
+{% endjavascript %}

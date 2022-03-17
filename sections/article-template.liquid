@@ -1,0 +1,620 @@
+<!-- /templates/article.liquid -->
+{% assign number_of_comments = article.comments_count %}
+
+{% if comment and comment.created_at %}
+  {% assign number_of_comments = article.comments_count | plus: 1 %}
+{% endif %} 
+
+<article itemscope itemtype="http://schema.org/Article">              
+  <div class="article-hero-container">    
+    <div class="grid article-hero-container_wrapper">
+      <div class="grid__item large--one-half medium-down--one-whole">     
+        <header class="section-header text-left">     
+          <h2 class="article-title">{{ article.title }}</h2>       
+          <hr class="hr--small">        
+          {%- comment -%}
+            Date Published
+          
+            <p>
+              <span class="date">
+                <time datetime="{{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' }}">{{ article.published_at | date: format: 'date' }}</time>
+              </span>
+            </p>
+          {%- endcomment -%}
+        </header>    
+      </div>
+      <div class="grid__item large--one-half medium-down--one-whole">          
+        <noscript>
+          {{ article.image | img_url: '2048x2048' | img_tag: article.title | escape }}
+        </noscript>    
+        <div class="article__featured-image-wrapper" style="padding-top:{{ 1 | divided_by: article.image.aspect_ratio | times: 100}}%;">
+          {% assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+          <img class="article__featured-image lazyload"
+            src="{{ article.image | img_url: '384x240' }}"   
+            data-src="{{ img_url }}"
+            data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+            data-aspectratio="{{ article.image.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ article.title | escape }}"
+          >
+        </div>     
+      </div>
+    </div>     
+  </div>       
+  <div class="article-content-container">
+    <div class="grid">                               
+      <div id="tableContentBox" class="grid__item large--three-tenths table-content-box medium-down--text-center">
+        <a href="javascript:void(0)" class="btn-close-sidebar large--hide" onclick="closeNav()">×</a>                     
+        <h5 class="title-table">Content</h5>          
+        <hr class="hr-table hr--small">   
+        <h6 class="title-post-table">{{ article.title }}</h6>
+        <div class="links-content"></div> 
+        <div class="grid__item large--hide">                             
+          <ul class="tags tags--article inline-list">
+            {% include 'tags-article' %}
+          </ul> 
+        </div>   
+      </div>
+      
+      <script>
+        /* 
+          Dynamic table of contents attempt   
+        
+        */
+
+        $(document).ready(function() {
+          if($('.article-template').length > 0) {    
+            $('.article-content-container .article-content-box .article-body h3.title-body').each(function() {
+              let title = $(this).html();  
+              let idLink = $(this).attr('id');      
+              var elementLink = '<hr class="hr-item-link"><a href="#'+ idLink + '">' + title +'</a>';                     
+              $('.table-content-box .links-content').append(elementLink);                                       
+            });
+          }
+        });  
+        function openNav() {
+          document.getElementById("tableContentBox").style.width = "250px";
+          document.getElementById("btnOpenNav").style.zIndex = "0";    
+        }   
+        function closeNav() {
+          document.getElementById("tableContentBox").style.width = "0px"; 
+          document.getElementById("btnOpenNav").style.zIndex = "1";                                
+        }     
+      </script>
+
+      <div id="articleContentBox" class="grid__item large--seven-tenths article-content-box">   
+        <div class="grid">          
+          <a href="javascript:void(0)" onclick="openNav()" id="btnOpenNav" class="large--hide medium-down--show btn-open-sidebar">
+            <img src="{{ 'icon-open-sidebar-2x.png' | asset_url }}" alt="Icon Open Nav">   
+          </a> 
+          <div class="grid__item large--seven-tenths">                        
+            <div class="article-body" itemprop="articleBody">
+              {{ article.content }}
+            </div>   
+            <ul class="tags tags--article inline-list">
+              {% include 'tags-article' %}
+            </ul>    
+          </div>
+          <div class="grid__item large--three-tenths">   
+            {% if section.settings.social_sharing_blog %}
+              {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+            {% endif %}  
+          </div>
+        </div>
+        <div class="medium-down--text-center">          
+          <a href="https://wovenearth.com/collections/woven-earth" class="btn btn-back-to-shop">Shop Woven Earth Now</a>         
+        </div>    
+      </div>              
+    </div> 
+  </div> 
+  <div class="leave-comments-container">   
+    <div class="wrapper">
+      <div class="grid text-center">        
+        <div class="grid__item">
+          <h3>Leave a Comment</h3>      
+          <hr class="hr--small">    
+        </div>
+        <div class="grid__item">        
+          <div class="form-vertical">
+            {% form 'new_comment', article %}
+              {{ form.errors | default_errors }}    
+              <div class="grid grid--small">
+                <div class="grid__item large--one-half">
+                  <label for="CommentAuthor" class="hidden-label">{{ 'blogs.comments.name' | t }}</label>
+                  <input class="input-full{% if form.errors contains 'author' %} error{% endif %}" type="text" name="comment[author]" placeholder="Full Name" id="CommentAuthor" value="{{ form.author }}" autocapitalize="words">   
+                </div>
+                <div class="grid__item large--one-half">
+                  <label for="CommentEmail" class="hidden-label">{{ 'blogs.comments.email' | t }}</label>
+                  <input class="input-full{% if form.errors contains 'email' %} error{% endif %}" type="email" name="comment[email]" placeholder="{{ 'blogs.comments.email' | t }}" id="CommentEmail" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
+                </div>
+              </div>
+  
+              <label for="CommentBody" class="hidden-label">{{ 'blogs.comments.message' | t }}</label>
+              <textarea class="input-full{% if form.errors contains 'body' %} error{% endif %}" name="comment[body]" id="CommentBody" placeholder="Write a Comment">{{ form.body }}</textarea>   
+  
+              <div class="text-center">
+                {% if blog.moderated? %}
+                  <p>{{ 'blogs.comments.moderated' | t }}</p>   
+                {% endif %}
+  
+                <input type="submit" class="btn btn-comment" value="Submit"> 
+              </div>
+  
+            {% endform %}
+          </div> 
+        </div>  
+        <div class="grid">   
+          {% if blog.comments_enabled? %}
+            {% if number_of_comments > 0 %}
+              <hr class="hr--large">
+              <h2 class="h3 text-center">{{ 'blogs.comments.with_count' | t: count: number_of_comments }}</h2>
+              <hr class="hr--small hr--clear">
+            {% endif %}
+      
+            {% paginate article.comments by 5 %}
+              {% comment %}
+                #comments is required, it is used as an anchor link by Shopify.
+              {% endcomment %}
+              <div id="comments">
+                {% if comment and comment.created_at %}
+                  <p class="note form-success">
+                    {% if blog.moderated? %}
+                      {{ 'blogs.comments.success_moderated' | t }}
+                    {% else %}
+                      {{ 'blogs.comments.success' | t }}
+                    {% endif %}
+                  </p>
+                {% endif %}
+      
+                {% if number_of_comments > 0 %}
+                  <ul class="no-bullets">
+                    {% comment %}
+                      If a comment was just submitted with no blank field, show it.
+                    {% endcomment %}
+                    {% if comment and comment.created_at %}
+                      <li id="{{ comment.id }}" class="comment first{% if article.comments_count == 0 %} last{% endif %}">
+                        {% include 'comment' %}
+                      </li>
+                    {% endif %}
+      
+                    {% comment %}
+                      Showing the rest of the comments.
+                    {% endcomment %}
+                    {% for comment in article.comments %}
+                      <li id="{{ comment.id }}" class="comment{% unless number_of_comments > article.comments_count %}{% if forloop.first %} first{% endif %}{% endunless %}{% if forloop.last %} last {% endif %}">
+                        {% include 'comment' %}
+                      </li>
+                      {% unless forloop.last %}
+                        <li><hr class="hr--clear"></li>
+                      {% endunless %}
+                    {% endfor %}
+                  </ul>
+      
+                  {% if paginate.pages > 1 %}
+                    {% include 'pagination' %}
+                  {% endif %}
+      
+                {% endif %}
+                <hr class="hr--large">
+      
+                <h2 class="h3 text-center">{{ 'blogs.comments.title' | t }}</h2>
+                <hr class="hr--small hr--clear">
+              </div>
+            {% endpaginate %}
+          {% endif %}
+        </div> 
+      </div>
+    </div>
+  </div>   
+</article>  
+
+{%- comment -%}
+  <hr class="hr--medium hr--clear">
+  <div class="text-center">
+    <a href="{{ blog.url }}" class="return-link">&larr; {{ 'blogs.article.back_to_blog' | t: title: blog.title }}</a>
+  </div>   
+{%- endcomment -%}
+  
+
+{% schema %}
+{
+  "name": {
+    "cs": "Stránky s články",
+    "da": "Artikelsider",
+    "de": "Artikelseiten",
+    "en": "Article pages",
+    "es": "Páginas del artículo",
+    "fi": "Artikkelisivut",
+    "fr": "Pages d'articles",
+    "it": "Pagine articoli",
+    "ja": "記事ページ",
+    "ko": "문서 페이지",
+    "nb": "Artikkelsider",
+    "nl": "Artikelpagina's",
+    "pl": "Strony artykułów",
+    "pt-BR": "Páginas do artigo",
+    "pt-PT": "Páginas de artigo",
+    "sv": "Artikelsidor",
+    "th": "หน้าบทความ",
+    "tr": "Makale sayfaları",
+    "vi": "Trang bài viết",
+    "zh-CN": "文章页面",
+    "zh-TW": "文章頁面"
+  },
+  "class": "article-template",  
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "social_sharing_blog",
+      "label": {
+        "cs": "Zobrazit tlačítka pro sdílení na sociálních sítích",
+        "da": "Vis knapper til deling på sociale medier",
+        "de": "Social-Sharing-Schaltflächen anzeigen",
+        "en": "Show social sharing buttons",
+        "es": "Mostrar botones para compartir en redes sociales",
+        "fi": "Näytä sosiaalisen median jakamispainikkeet",
+        "fr": "Afficher les boutons de partage social",
+        "it": "Mostra i pulsanti per la condivisione sui social",
+        "ja": "ソーシャルメディアでの共有ボタンを表示する",
+        "ko": "소셜 공유 버튼 표시",
+        "nb": "Vis knapper for deling på sosiale medier",
+        "nl": "Knoppen voor sociaal delen weergeven",
+        "pl": "Pokaż przyciski udostępniania w mediach społecznościowych",
+        "pt-BR": "Exibir botões de compartilhamento em redes sociais",
+        "pt-PT": "Mostrar botões de partilha nas redes sociais",
+        "sv": "Visa knappar för delning i sociala medier",
+        "th": "แสดงปุ่มสำหรับแชร์ลงโซเชียล",
+        "tr": "Sosyal medya paylaşım düğmelerini göster",
+        "vi": "Hiển thị nút chia sẻ qua mạng xã hội",
+        "zh-CN": "显示社交分享按钮",
+        "zh-TW": "顯示社群分享按鈕"
+      },
+      "default": true
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet 'scss' %}
+  .article-template {      
+    margin-top: -80px;
+    @media screen and (max-width: 768px) {
+      margin-top: 20px;          
+    }                               
+    .article-hero-container {           
+      background-color: #68c7ab;
+      height: auto;
+      .article-hero-container_wrapper { 
+        @media screen and (max-width: 768px) {
+          display: flex;  
+          flex-direction: row;                     
+          flex-wrap: wrap-reverse;                   
+        }        
+      }                 
+      header.section-header {
+        margin: 233.5px 16px 233.5px 112px;
+        @media screen and (max-width: 768px) {
+          margin: 33px 20px;                
+        }                 
+        h2 {
+          max-width: 592px;
+          font-size: 40px;
+          line-height: 1.4;
+          letter-spacing: normal;    
+          color: #faf1dd;
+          @media screen and (max-width: 768px) {
+            width: 280px;       
+            font-size: 24px;   
+            margin: 0 auto 15px;      
+            text-align: center;         
+          }
+        } 
+        hr {
+          border-top: 1px solid #faf1dd;
+          margin: 0px;
+          @media screen and (max-width: 768px) {
+            margin: 0 auto;   
+          }
+        }    
+      }
+      .article__featured-image-wrapper {
+        @media screen and (max-width: 768px) {
+          padding-top: 210px !important;                          
+        }           
+        img {
+          width: 720px;
+          height: 600px; 
+          @media screen and (max-width: 768px) {           
+            height: 210px;    
+          }      
+        }
+      }
+    }
+    .article-content-container {  
+      background-color: #1f322f;                       
+      .table-content-box {
+        background-color: #1f322f;        
+        padding: 90px 0 0 120px; 
+        @media screen and (max-width: 768px) {           
+          padding: 50px 0 0 0;                              
+          // Sidebar Collapsable       
+          width: 0px;                  
+          position: absolute;
+          z-index: 1;
+          top: 470px;           
+          left: 0;
+          overflow-x: hidden;
+          transition: 0.5s;  
+          height: 100%;                     
+        }  
+        .btn-close-sidebar { 
+          position: absolute;
+          top: 0;
+          right: 25px;
+          z-index: 4;       
+          font-size: 36px;
+          margin-left: 50px;      
+          font-family: 'Roboto';      
+          color: #faf1dd;
+          &:hover, &:active {       
+            color: #ae9565;    
+          }
+        }                                                                   
+        h5 {
+          font-family: 'Abril Fatface';
+          font-size: 24px;    
+          line-height: normal;
+          letter-spacing: normal;
+          color: #ae9565;  
+        } 
+        hr {
+          border-top: 1px solid #ae9565;  
+          margin: 8px 0 20px;
+          @media screen and (max-width: 768px) {
+            margin: 8px auto 20px;       
+          }           
+        }
+        h6 {        
+          max-width: 200px;                   
+          font-family: 'Roboto';
+          font-size: 12px;
+          font-weight: bold;
+          line-height: 1.33;    
+          color: #faf1dd;  
+          text-transform: none; 
+          @media screen and (max-width: 768px) {
+            margin: 0 auto;    
+          }            
+        } 
+        .links-content {
+          display: flex;           
+          flex-direction: column; 
+          hr.hr-item-link {  
+            width: 10px;
+            height: 1px;
+            margin: 12px 0;    
+            border-top: 1px solid #faf1dd; 
+            @media screen and (max-width: 768px) {
+              margin: 12px auto;           
+            }      
+          }  
+          a {
+            font-family: 'Roboto';   
+            font-size: 12px;
+            font-weight: 300;    
+            color: #faf1dd; 
+            max-width: 200px;              
+            &:hover { 
+              color: #ae9565;      
+            }     
+          }
+        }  
+        ul {
+          margin-top: 12px;      
+          li {     
+            display: flex;       
+            flex-direction: column;       
+            align-items: center;
+            .tags__title { 
+              font-family: 'Roboto';   
+              font-size: 12px;
+              font-weight: 300;    
+              color: #ae9565;      
+              margin-bottom: 12px;            
+            }
+            a.text-link { 
+              font-family: 'Roboto';   
+              font-size: 12px;
+              font-weight: 300;    
+              color: #faf1dd; 
+              text-transform: none;                    
+              &:hover { 
+                color: #ae9565;      
+              }        
+            }
+          }
+        }
+      }
+      .article-content-box {                                                                
+        background-color: #ffffff;
+        padding: 72px 0 59px 60px;   
+        @media screen and (max-width: 768px) {
+          padding: 32px 17px;                                     
+        }
+        .btn-open-sidebar { 
+          position: relative;
+          z-index: 1;         
+          left: 20px;    
+          top: -15px;        
+          img {
+            width: 25px;
+            height: 25px;             
+          }      
+        }      
+        .article-body {       
+          max-width: 728px;   
+          font-family: 'Roboto'; 
+          font-size: 18px;
+          line-height: 1.78;
+          letter-spacing: normal;
+          color: #1f322f;     
+          @media screen and (max-width: 768px) {
+            /*;   
+            font-size: 14px;*/      
+            line-height: 1.71;
+            margin: 0 auto; 
+            max-width: 255px;                               
+          }     
+          &::first-letter{
+            font-family: 'Abril Fatface';       
+            font-size: 70px;
+            color: #68c7ab;
+            line-height: 1;
+            letter-spacing: normal;
+            @media screen and (max-width: 768px) {
+              //font-size: 36px;    
+            }
+          }       
+          h3 {        
+            font-family: 'Abril Fatface';          
+            font-size: 28px;
+            color: #ae9565;
+            line-height: 1.78;
+            letter-spacing: normal; 
+            text-transform: none; 
+            @media screen and (max-width: 768px) {
+              //font-size: 20px;       
+            }           
+          }
+        }  
+        ul.tags.tags--article.inline-list { 
+          @media screen and (max-width: 768px) {
+            margin-left: 30px;                                     
+          } 
+          li { 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;       
+            .tags__title { 
+              font-family: 'Roboto';      
+              font-size: 16px;
+              font-weight: bold;
+              color: #1f322f;
+              @media screen and (max-width: 768px) {
+                //font-size: 14px;
+              }
+            }
+            a.text-link { 
+              font-family: 'Roboto';
+              font-size: 16px;       
+              text-align: right;
+              color: #1f322f;
+              text-transform: none;  
+              &:hover { 
+                color: #ae9565;      
+              } 
+              @media screen and (max-width: 768px) {
+                //font-size: 14px;
+              }               
+            }
+          }
+        }
+        .btn-back-to-shop {
+          padding: 15px 78px;      
+          background-color: #1f322f;
+          font-family: 'Roboto';
+          font-size: 16px;
+          font-weight: 500;       
+          margin-top: 24px;
+          @media screen and (max-width: 768px) {
+            margin-left: 20px;                  
+          }
+        }
+        .social-sharing {                             
+          display: flex;       
+          flex-direction: column;
+          align-items: flex-start; 
+          @media screen and (max-width: 768px) {
+            display: flex;   
+            flex-direction: row;      
+            align-items: center;          
+            justify-content: space-around;
+          }           
+          a {
+            color: #68c7ab;      
+            span {
+              font-size: 18px;
+              @media screen and (max-width: 768px) {    
+                //font-size: 16px;   
+              }        
+            }      
+          }
+        }    
+      }    
+    }  
+    .leave-comments-container {  
+      padding-bottom:37px;    
+      background-color: #68c7ab; 
+      margin-bottom: -40px;  
+      @media screen and (max-width: 768px) {
+        padding-bottom: 48px;      
+      }                       
+      h3 {            
+        font-family: 'Abril Fatface';
+        font-size: 32px;
+        line-height: normal;
+        letter-spacing: normal;  
+        color: #faf1dd; 
+        margin-top: 44px;  
+        text-transform: none; 
+        @media screen and (max-width: 768px) {
+          margin-top: 39px; 
+          font-size: 24px;       
+        }                 
+      }
+      hr {
+        border-top: 1px solid #faf1dd;           
+      } 
+      .form-vertical {
+        margin-top: 31px;  
+        @media screen and (max-width: 768px) {        
+          margin-top: 23px;  
+        }
+        #CommentEmail, #CommentAuthor {   
+          height: 56px;       
+          font-family: 'Roboto';         
+          font-size: 16px;
+          font-style: normal; 
+          color: #9c9c9c; 
+          outline: none;                 
+        }  
+        #CommentEmail {
+          @media screen and (max-width: 768px) {
+            margin-top: 16px;         
+          }            
+        }
+        textarea {
+          margin-top: 31px;         
+          font-family: 'Roboto';
+          font-size: 16px; 
+          font-style: normal;             
+          color: #9c9c9c;
+          outline: none;     
+          @media screen and (max-width: 768px) {
+            margin-top: 16px;         
+          }
+        }   
+        .btn-comment {
+          width: 208px;
+          height: 48px;
+          padding: 15px 78px;      
+          background-color: #1f322f;
+          font-family: 'Roboto';
+          font-size: 16px;
+          font-weight: 500;       
+          margin-top: 24px;              
+        }
+      }
+    }                     
+  }           
+{% endstylesheet %} 

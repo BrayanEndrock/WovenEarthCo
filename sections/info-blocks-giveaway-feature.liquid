@@ -1,0 +1,202 @@
+<div class="giveaway-blocks-container">      
+    <div class="wrapper">
+        <div class="grid info-blocks-wrapper values-slider">         
+            {% for block in section.blocks %}
+                <div class="grid__item large--one-third">
+                    <div class="info-box">        
+                        {% assign img_url = block.settings.icon | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                        <img class="lazyload"
+                            src="{{ block.settings.icon | img_url: '160x224' }}"        
+                            data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                            data-aspectratio="{{ block.settings.icon.aspect_ratio }}"  
+                            data-sizes="auto"
+                            alt="Info Icon"                
+                        > 
+                        <h6>{{ block.settings.title }}</h6> 
+                        <div class="copy">{{ block.settings.copy }}</div>    
+                    </div>
+                </div>  
+            {% endfor %}
+        </div>
+    </div>
+    {% assign img_url_leaf = section.settings.background-leaf | img_url_leaf: '1x1' | replace: '_1x1.', '_{width}x.' %}
+    <img class="lazyload leaf-bg" 
+        src="{{ section.settings.background-leaf | img_url: '298x298' }}"            
+        data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+        data-aspectratio="{{ section.settings.background-leaf.aspect_ratio }}"      
+        data-sizes="auto"
+        alt="Leaf Background"                
+    > 
+</div>
+
+<style>
+    .giveaway-blocks-container {       
+        background-image: url({{ section.settings.background-image | img_url: 'master' }});          
+        background-position: center;                 
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 700px;   
+    }
+    @media screen and (max-width: 768px) {
+        .giveaway-blocks-container {       
+            background-image: url({{ section.settings.background-image-mobile | img_url: 'master' }});          
+            height: 536px;                              
+        }
+    }
+</style>        
+
+{% stylesheet 'scss' %}
+    .giveaway-blocks {
+        .giveaway-blocks-container {    
+            padding: 72px 0 196px; 
+            @media screen and (max-width: 768px) {
+                padding: 40px 0 72px;              
+            }    
+            .leaf-bg {
+                position: absolute;  
+                right: 0;
+                margin-top: 3%; 
+                @media screen and (max-width: 768px) { 
+                    display: none;      
+                }                
+            }
+            .info-blocks-wrapper {
+                margin-left: 0;            
+                .info-box {
+                    position: relative;
+                    width: 280px;
+                    height: 456px;
+                    @media screen and (max-width: 768px) {
+                        width: 314px;
+                        height: 388px;
+                        margin-left: -15px;
+                    }
+                    &:before {
+                        position: absolute;
+                        content: " ";
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100%;
+                        background-color: #fff;
+                        height: 74%;
+                        border-radius: 4px;
+                        @media screen and (max-width: 768px) {
+                            height: 60%;  
+                        }
+                    }
+                    img {
+                        margin: 0 auto;
+                        display: block;
+                        position: relative;                   
+                    }
+                    h6 {
+                        max-width: 200px;         
+                        font-family: 'Abril Fatface', sans-serif;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 32px;
+                        line-height: 40px;
+                        text-align: center;
+                        color: #AE9565;
+                        padding: 0;
+                        margin: 16px auto 14px;
+                        letter-spacing: 0;      
+                        text-transform: capitalize;
+                        position: relative;  
+                        @media screen and (max-width: 768px) {
+                            font-size: 24px;
+                            line-height: 32px;
+                            margin: 7px auto 8px;
+                        }               
+                    }
+                    .copy {
+                        p {
+                            max-width: 213px;
+                            font-family: 'Roboto', sans-serif;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 18px;
+                            line-height: 24px;
+                            text-align: center;
+                            color: #1A322F;
+                            padding: 0;
+                            margin: 0 auto 42px; 
+                            position: relative;
+                            @media screen and (max-width: 768px) {
+                                font-size: 14px;
+                                margin: 0 auto 33px;
+                            }                   
+                        }
+                    }
+                }
+                .slick-dots {
+                    bottom: unset;
+                    margin-top: 10%; 
+                    .slick-active {
+                        button {
+                            &:before {
+                                background-color: #68C9AB;      
+                            }
+                        }
+                    }   
+                    li {
+                        button {   
+                            &:before {
+                                border-color: #fff;     
+                                background-color: transparent;
+                            }
+                        }
+                    }     
+                }      
+            }     
+        }
+    }
+{% endstylesheet %}
+
+{% schema %}
+    {
+        "name": "Info Blocks - Giveaway",           
+        "class": "giveaway-blocks",
+        "settings": [ 
+            {
+               "type": "image_picker",
+               "id": "background-image",
+               "label": "Background Image Feature"
+            },
+            {
+                "type": "image_picker",
+                "id": "background-image-mobile",
+                "label": "Background Image Mobile Feature"
+            },
+            {
+                "type": "image_picker",  
+                "id": "background-leaf",
+                "label": "Background Leaf"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "info",
+                "name": "Info Block",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "icon",      
+                        "label": "Icon"
+                    },
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "copy",
+                        "label": "Copy"
+                    }
+                ]     
+            }  
+        ]
+    }
+{% endschema %}

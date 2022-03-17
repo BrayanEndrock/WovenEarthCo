@@ -1,0 +1,73 @@
+<div class="giveaway-banner-container">
+    <h2>{{ section.settings.title }}</h2>
+</div>
+
+<style>
+    .giveaway-banner-container {
+        background-image: url({{ section.settings.banner | img_url: 'master' }});          
+        background-position: center;                 
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 256px;              
+        width: auto;
+    }  
+    @media screen and (max-width: 768px) {
+        .giveaway-banner-container {
+            background-image: url({{ section.settings.banner-mobile | img_url: 'master' }});
+            height: 440px;          
+        }
+    }
+</style>
+
+{% stylesheet 'scss' %}
+    .giveaway-banner {
+        .giveaway-banner-container {
+            padding-left: 420px;         
+            padding-top: 45px;            
+            @media screen and (max-width: 768px) {
+                padding-left: 0; 
+                padding-top: 10px;                
+            }                      
+            h2 {
+                max-width: 745px;                  
+                font-size: 60px;
+                line-height: 72px;
+                color: #1A322F; 
+                margin: 0;       
+                padding: 0;         
+                @media screen and (max-width: 768px) {
+                    max-width: 288px;         
+                    font-size: 32px;
+                    line-height: 48px;
+                    text-align: center;
+                    margin: 0 auto;    
+                }          
+            }
+        }
+    }
+{% endstylesheet %}
+
+{% schema %}
+    {
+        "name": "Banner - Giveaway Feature",           
+        "class": "giveaway-banner",
+        "settings": [ 
+            {
+                "type": "image_picker",
+                "id": "banner",
+                "label": "Banner - Giveaway Feature"
+            },
+            {
+                "type": "image_picker",
+                "id": "banner-mobile",
+                "label": "Banner Mobile - Giveaway Feature"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title Banner - Giveaway Feature",
+                "default": "Sleep Better Tonight, Sleep Better Every Night"
+            }
+        ]       
+    }
+{% endschema %}

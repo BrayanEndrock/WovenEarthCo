@@ -1,0 +1,202 @@
+<div class="giveaway-customers-container">  
+    <div class="wrapper">
+        <h2 class="title-customer-feature">{{ section.settings.title }}</h2>      
+        <div class="grid">
+            {% for block in section.blocks %}
+                <div class="grid__item large--one-half">       
+                    <div class="review-box">        
+                        {% assign img_url = block.settings.icon | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                        <img class="lazyload review-icon"
+                            src="{{ block.settings.icon | img_url: '144x144' }}"    
+                            data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+                            data-aspectratio="{{ block.settings.icon }}"  
+                            data-sizes="auto"
+                            alt="Review Icon"                
+                        > 
+                        <div class="review-stars">
+                            {% for i in (1..block.settings.rating) %}
+                                <img data-src="{{'review-star.png' | asset_url }}" class="lazyload" alt="Review Star">      
+                            {% endfor %}      
+                        </div>
+                        <div class="review-quote">{{ block.settings.quote }}</div>
+                        <h6>{{ block.settings.author }}</h6>       
+                    </div>
+                </div>  
+            {% endfor %}   
+        </div>
+    </div>
+</div>        
+
+{% stylesheet 'scss' %}
+    .giveaway-customers {
+        .giveaway-customers-container {
+            padding: 111px 0 144px;
+            background-color: #195850;
+            @media screen and (max-width: 768px) {
+                padding: 71px 0 96px;
+            }  
+            h2.title-customer-feature {
+                font-style: normal;
+                font-weight: normal;         
+                font-size: 56px;
+                line-height: 72px;
+                text-align: center;  
+                color: #FAF1DD;
+                margin: 0 auto 49px;    
+                padding: 0;      
+                @media screen and (max-width: 768px) {
+                    font-size: 24px;
+                    line-height: 32px;
+                    margin: 0 auto 33px; 
+                    text-transform: uppercase;          
+                }                         
+            } 
+            .wrapper {
+                @media screen and (max-width: 768px) {
+                    padding: 0 15px;                
+                }
+            }
+            .grid__item.large--one-half {
+                &:last-of-type {
+                    .review-box {
+                        .review-quote {
+                            p {
+                                max-width: 434px;                                              
+                                
+                            }       
+                        }
+                    }               
+                }
+            }
+            .review-box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                align-content: center; 
+                max-height: 416px; 
+                max-width:528px; 
+                position: relative;
+                @media screen and (max-width: 768px) {
+                    max-height: 428px; 
+                    &:first-of-type {
+                        margin-bottom: 24px;      
+                    }           
+                }
+                &:before {
+                    position: absolute;
+                    content: " ";
+                    width: 100%;         
+                    left: 0;
+                    right: 0;
+                    bottom: 0;     
+                    background-color: #FAF1DD;
+                    height: 83%;                
+                    border-radius: 4px;     
+                    @media screen and (max-width: 768px) {
+                        height: 84%; 
+                    }
+                }                               
+                .review-icon {
+                    margin: 0 auto; 
+                    display: block;
+                    position: relative;         
+                }
+                .review-stars {
+                    position: relative;
+                    margin-bottom: 18px;
+                    @media screen and (max-width: 768px) {
+                        margin-bottom: 15px;
+                    }
+                }
+                .review-quote {
+                    position: relative;
+                    p {
+                        max-width: 373px;              
+                        font-family: 'Roboto', sans-serif;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 18px;
+                        line-height: 32px;
+                        text-align: center;
+                        color: #1A322F;
+                        @media screen and (max-width: 768px) {
+                            max-width: 216px;
+                            font-size: 14px;
+                            line-height: 24px;
+                        }
+                    }       
+                }
+                h6 {
+                    font-family: 'Roboto', sans-serif;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 18px;   
+                    line-height: 32px;
+                    text-align: center;        
+                    color: #1A322F;
+                    text-transform: capitalize;   
+                    position: relative;
+                    margin: 16px auto 46px; 
+                    @media screen and (max-width: 768px) {
+                        margin: 4px auto 21px;
+                        font-size: 14px;      
+                    }                      
+                }
+                
+            }              
+        }
+    }
+{% endstylesheet %}
+
+{% schema %}
+    {
+        "name": "Customers - Giveaway",           
+        "class": "giveaway-customers",
+        "settings": [ 
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title - Giveaway Feature",  
+                "default": "What Customers Say"
+            },
+            {
+                "type": "image_picker",
+                "id": "background-image",
+                "label": "Background"  
+            }    
+        ],
+        "blocks": [
+            {
+                "type": "review",
+                "name": "Review",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "icon",      
+                        "label": "Icon"
+                    },
+                    {
+                        "type": "range",      
+                        "id": "rating",
+                        "min": 1,
+                        "max": 5,
+                        "step": 1,
+                        "unit": "S",
+                        "label": "Rating",
+                        "default": 5
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "quote",
+                        "label": "Quote"
+                    },
+                    {
+                        "type": "text",
+                        "id": "author", 
+                        "label": "Author"
+                    }
+                ]     
+            }  
+        ]       
+    }
+{% endschema %}
