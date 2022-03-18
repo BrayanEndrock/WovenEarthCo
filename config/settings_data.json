@@ -294,7 +294,7 @@
             "settings": {
               "img": "shopify:\/\/shop_images\/testimonial-martha_f1ad4e13-1b20-41c6-adc7-d6706991f12d.jpg",
               "content": "<p>“When I started taking Woven Earth I was hopeful it would help the bone-on-bone arthritis in my knees. Now, the pain is basically gone. In addition to that, I’m sleeping better, my back is no longer stiff, and my sense of well-being is markedly improved.”<\/p>",
-              "author": "Martha Hackett, MD | Mentor, Ohio",
+              "author": "Martha Hackett, MD | <br>Mentor, Ohio",
               "max": 5,
               "date": "12\/11\/2021"
             }
@@ -303,8 +303,8 @@
             "type": "testimonial",
             "settings": {
               "img": "shopify:\/\/shop_images\/CAM_0233-Edit-4_1.png",
-              "content": "<p>As an Integrative Health Pharmacist, I believe that optimizing health involves a multifaceted approach, including CBD. Educating our patients, family, and friends about the benefits of the cannabis plant is the first step to reframing the conversation to empower everyone to nourish our mind, body, and spirit. This is why I trust Woven Earth.<\/p>",
-              "author": "Swathi Varanasi, PharmD | Los Angeles, California",
+              "content": "<p>As an Integrative Health Pharmacist, I believe that optimizing health involves a multifaceted approach, including hemp. Educating our patients, family, and friends about the benefits of the cannabis plant is the first step to reframing the conversation to empower everyone to nourish our mind, body, and spirit. This is why I trust Woven Earth.<\/p>",
+              "author": "Swathi Varanasi, PharmD | <br>Los Angeles, California",
               "max": 5,
               "date": "12\/11\/2021"
             }
@@ -723,10 +723,11 @@
       "162983412745c2f9d5": {
         "type": "home-feature-product",
         "settings": {
-          "product-image": "shopify:\/\/shop_images\/product_image.png",
-          "product": "relief-full-spectrum-hemp",
-          "description": "<p>Woven Earth’s Relief Cream is specially formulated to tackle muscle aches and soreness. The slightly green color of our cream is the result of our gentle lipid extraction process, which preserves chlorophyll, flavonoids, terpenes and other naturally occurring vitamins and minerals. For best results, rub into the affected area twice daily. <\/p>",
-          "url": "shopify:\/\/products\/relief-full-spectrum-hemp",
+          "product-image": "shopify:\/\/shop_images\/daily-hemp-oil-banner.png",
+          "mobile-product-image": "shopify:\/\/shop_images\/WE-_design_mirror_site_-_OIL_-_Mobile_2.png",
+          "product": "daily-full-spectrum-hemp-oil",
+          "description": "<p>Woven Earth’s Relief Cream is specially formulated to tackle muscle aches and soreness. The slightly green color of our cream is the result of our gentle lipid extraction process, which preserves chlorophyll, flavonoids, terpenes and other naturally occurring vitamins and minerals. For best results, rub into the affected area twice daily.<\/p>",
+          "url": "shopify:\/\/products\/copy-of-relief-full-spectrum",
           "label": "Learn More"
         }
       },
