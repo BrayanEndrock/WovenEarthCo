@@ -100,11 +100,17 @@
                     @media screen and (max-width: 768px) {
                         font-size: 24px;
                         line-height: 32px; 
-                        top: 0;                 
+                        top: 0;
+                        margin-bottom: 0;               
                     }      
                 }
             } 
             .reviews-badge-feature {
+                @media screen and (max-width: 768px) {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                }
                 .jdgm-prev-badge__stars {     
                     .jdgm-star {
                         color: #AE9565 !important;                     
@@ -139,7 +145,7 @@
                 @media screen and (max-width: 768px) {
                     font-size: 12px;
                     line-height: 24px;
-                    margin: 0 0 16px;  
+                    margin: 17px 0 16px;  
                 }  
             }
             .btn-feature-product {
