@@ -2299,7 +2299,13 @@ footer {
 	line-height: 34px !important;
 	text-align: center !important;
 	color: #FFFFFF !important;
-	font-family: 'Roboto', sans-serif !important;    
+	font-family: 'Roboto', sans-serif !important; 
+	&:hover {
+		background-color: #fff !important;
+		border: solid 1px #195850 !important;
+		color: #195850 !important;
+		transition: all 0.5s;
+	}   
 	@media screen and (max-width: 768px) {    
 		padding: 9px 34px !important; 
 		width: 100% !important;              
@@ -2382,19 +2388,6 @@ footer {
 					}   
 				}
 				.form-add-to-cart-container {
-					h5.suscribe-and-save {
-						font-family: 'Roboto',sans-serif;       
-						font-style: normal;
-						font-weight: bold;
-						font-size: 20px;
-						line-height: 32px;
-						color: #000000;
-    					text-transform: capitalize;
-						text-align: left;  
-						@media screen and (max-width: 768px) {
-							font-size: 18px;    
-						}
-					}
 					form {
 						.rc-container-wrapper {
 							.rc-container {
@@ -2444,7 +2437,7 @@ footer {
 								}             
 							}  
 							.product-single__add-to-cart {
-								margin: 0;    
+								margin: 0;
 							}    
 						}
 					}
@@ -2641,6 +2634,9 @@ footer {
 			@media screen and (max-width: 768px) { 
 				padding: 20px 0;                               
 			}
+			.jdgm-widget.jdgm-widget {
+				display: block !important;
+			}
 			#judgeme_product_reviews {
 				.jdgm-rev-widg {
 					border: 1px solid #68C9AB;
@@ -2698,14 +2694,21 @@ footer {
 						.jdgm-rev-widg__reviews {
 							.jdgm-rev {
 								border: 1px solid #68C9AB;      
-								display: flex;                         
-    							justify-content: space-between;
+								display: flex;
+								justify-content: space-between;
+								align-items: center;
+								align-content: center;
+								flex-direction: row;            
 								@media screen and (max-width: 768px) {
-									flex-direction: column;     
+									flex-direction: column;    
+									align-items: flex-start;           
 								}
 								.jdgm-rev__header {
 									display: flex;     
-									flex-direction: column;     
+									flex-direction: column; 
+									@media screen and (min-width: 769px) {
+										width: 172px;  
+									}           
 									.jdgm-rev__icon {
 										display: none;     
 									}
@@ -2778,7 +2781,6 @@ footer {
 				}
 			}
 		}
-
 	}
 }     
 /* Klaviyo Subscription Form on Footer */
