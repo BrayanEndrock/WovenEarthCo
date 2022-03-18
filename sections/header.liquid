@@ -73,9 +73,9 @@
 {%- endstyle -%}
 <div data-section-id="{{ section.id }}" data-section-type="header-section" data-template="{{ request.page_type }}">
   <div id="NavDrawer" class="drawer drawer--left">
-    {% include 'drawer-menu' %}
+    {% include 'drawer-menu' %}     
   </div>
-  <div class="header-container drawer__header-container">
+  <div class="header-container drawer__header-container" id="Header">       
     <div class="header-wrapper" data-header-wrapper>
       {% if section.settings.show_announcement %}
         {% if section.settings.home_page_only == false or request.page_type == 'index' %}
@@ -158,18 +158,22 @@
                           aria-expanded="false"
                           {% unless request.page_type == 'index' %}{% if link.active %}aria-current="page"{% endif %}{% endunless%}>
                             {{ link.title | escape }}
-                            <span class="icon icon-arrow-down" aria-hidden="true"></span>
+                            {%- comment -%}           
+                              <span class="icon icon-arrow-down" aria-hidden="true"></span>
+                            {%- endcomment -%}
+                            
                         </a>
                         <ul
                           id="MenuParent-{{ parent_index }}"
                           class="site-nav__dropdown {% if link.levels == 2 %}site-nav--has-grandchildren{% endif %}"
-                          data-meganav-dropdown>
+                          data-meganav-dropdown
+                        >        
                           {% for childlink in link.links %}
                             {% if childlink.links != blank %}
-                            {% assign child_index = forloop.index %}
+                              {% assign child_index = forloop.index %}
                               <li
                                 class="site-nav__item site-nav--has-dropdown site-nav--has-dropdown-grandchild {% if childlink.active %}site-nav--active{% endif %}"
-                                aria-haspopup="true">
+                                aria-haspopup="true">           
                                 <a
                                   href="{{ childlink.url }}"
                                   class="site-nav__dropdown-link"
@@ -177,8 +181,10 @@
                                   data-meganav-type="parent"
                                   {% unless request.page_type == 'index' %}{% if childlink.active %}aria-current="page"{% endif %}{% endunless%}
                                   tabindex="-1">
-                                    {{ childlink.title | escape }}
+                                    {{ childlink.title | escape }}  
+                                  {%- comment -%}
                                     <span class="icon icon-arrow-down" aria-hidden="true"></span>
+                                  {%- endcomment -%}                    
                                 </a>
                                 <div class="site-nav__dropdown-grandchild">
                                   <ul
@@ -199,19 +205,21 @@
                                   </ul>
                                 </div>
                               </li>
-                            {% else %}
+                            {% else %}              
+                              {% assign link_index = forloop.index %}
                               <li{% if childlink.active %} class="site-nav--active"{% endif %}>
                                 <a
                                   href="{{ childlink.url }}"
                                   class="site-nav__dropdown-link"
                                   data-meganav-type="child"
                                   {% if childlink.active %}aria-current="page"{% endif %}
-                                  tabindex="-1">
-                                    {{ childlink.title | escape }}
-                                </a>
+                                  tabindex="-1"
+                                >
+                                  {{ childlink.title | escape }}
+                                </a>         
                               </li>
                             {% endif %}
-                          {% endfor %}
+                          {% endfor %}    
                         </ul>
                       </li>
                     {% else %}
@@ -221,7 +229,7 @@
                           class="site-nav__link"
                           data-meganav-type="child"
                           {% unless request.page_type == 'index' %}{% if link.active %}aria-current="page"{% endif %}{% endunless%}>
-                            {{ link.title | escape }}
+                            {{ link.title | escape }}     
                         </a>
                       </li>
                     {% endif %}
@@ -277,32 +285,20 @@
 
 
 
-              <div class="right-main-nav">
+              <div class="right-main-nav">     
+                
+                <li class="site-nav__item subscribe-and-save-link medium-down--hide">                 
+                  <a class="site-nav__link" href="https://wovenearth.com/pages/subscribe-and-save">
+                    Subscribe & Save     
+                  </a>              
+                </li>
 
-                {% if shop.customer_accounts_enabled %}
-                  <li class="site-nav__item site-nav__expanded-item site-nav__item--compressed">
-                    <a class="site-nav__link site-nav__link--icon" href="{{ routes.account_url }}">
-                      <span class="icon-fallback-text">
-                        <span class="icon-fallback-text small--hide">
-                          {% if customer %}
-                            {{ 'layout.customer.account' | t }}
-                          {% else %}    
-                            Sign In
-                          {% endif %}
-                        </span>
-                        <span class="icon icon-customer" aria-hidden="true"></span>
-                      </span>
-                    </a>
-                  </li>
-                {% endif %}
-
-
-                <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
+                <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart cart-link js-drawer-open-button-right" aria-controls="CartDrawer">
                   {% include 'icon-cart' %}
                   <span class="icon__fallback-text">Cart</span>
                   <div id="CartCount" class="site-header__cart-count{% if cart.item_count == 0 %} hide{% endif %} critical-hidden" data-cart-count-bubble>
                     <span data-cart-count>{{ cart.item_count }}</span>
-                  </div>
+                  </div>          
                 </a>
 
               </div>
@@ -334,6 +330,23 @@
     </div>
   </div>
 </div>
+
+<script>
+  window.onscroll = function() {                   
+    backgroundStickyHeader();
+  };
+  
+  var header = document.getElementById("Header");
+  var sticky = header.offsetTop;
+  
+  function backgroundStickyHeader() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
+</script>  
 
 
 
@@ -1036,7 +1049,7 @@
         "zh-TW": "文字"
       },
       "default": "#ffffff"
-    }
+    }              
   ]
 }
 {% endschema %}
