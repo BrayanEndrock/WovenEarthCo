@@ -325,8 +325,8 @@
         "type": "featured-row",
         "settings": {
           "theme": "dark",
-          "image": "shopify:\/\/shop_images\/all-products-hero-featured-image.png",
-          "mobile_image": "shopify:\/\/shop_images\/all-products-hero-featured-image-mobile.png",
+          "image": "shopify:\/\/shop_images\/desktop-hero.png",
+          "mobile_image": "shopify:\/\/shop_images\/mobile-hero.png",
           "layout": "left",
           "title": "The Woven Earth difference.",
           "text": "",
