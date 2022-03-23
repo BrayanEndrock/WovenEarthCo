@@ -325,8 +325,8 @@
         "type": "featured-row",
         "settings": {
           "theme": "dark",
-          "image": "shopify:\/\/shop_images\/desktop-hero.png",
-          "mobile_image": "shopify:\/\/shop_images\/mobile-hero.png",
+          "image": "shopify:\/\/shop_images\/desktop-featured-image_01883b38-2694-4b66-aa78-966ee1448427.png",
+          "mobile_image": "shopify:\/\/shop_images\/mobile-featured-image_c8f0ed1d-6284-49e6-95b3-f204117f9872.png",
           "layout": "left",
           "title": "The Woven Earth difference.",
           "text": "",
@@ -726,7 +726,7 @@
           "product-image": "shopify:\/\/shop_images\/daily-hemp-oil-banner.png",
           "mobile-product-image": "shopify:\/\/shop_images\/WE-_design_mirror_site_-_OIL_-_Mobile_2.png",
           "product": "daily-full-spectrum-hemp-oil",
-          "description": "<p>Woven Earth’s Relief Cream is specially formulated to tackle muscle aches and soreness. The slightly green color of our cream is the result of our gentle lipid extraction process, which preserves chlorophyll, flavonoids, terpenes and other naturally occurring vitamins and minerals. For best results, rub into the affected area twice daily.<\/p>",
+          "description": "<p>Our premium Hemp Oil delivers whole-body relief from aches, inflammation, stress, and restlessness with every drop. Each 1ml dropper contains 13.3mg of full-spectrum. Available in a soothing Peppermint flavor. The deep green color of our oil is the result of our gentle lipid extraction process, which preserves chlorophyll, flavonoids, terpenes and other naturally occurring vitamins and minerals. For best results, hold under tongue for 20-30 seconds, then swallow.<\/p>",
           "url": "shopify:\/\/products\/copy-of-relief-full-spectrum",
           "label": "Learn More"
         }
